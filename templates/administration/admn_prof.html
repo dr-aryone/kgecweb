@@ -1,0 +1,69 @@
+{% extends "nav.html" %}
+{% block title %}
+<div class="row">   
+	<div class="col-xs-7">
+		
+		{% for prof in admin_prof%}
+
+		<h4>From The  {{prof.AdminType|lower|capfirst }}'s Desk </h4>
+
+		{% endfor %}
+
+	</div>
+	<div class="col-xs-5">
+
+	</div>
+</div>
+{% endblock %}
+<hr>
+{% block body %}
+<div class="row">
+
+	<div class="col-xs-3">
+
+		{% for prof in admin_prof%}
+		<div class="thumbnail">
+			<img class="img-rounded img-responsive"src="{{ prof.AdminImage.thumbnail.url }}" alt="{{prof.AdminImage.name}}" height="150" width="150">
+			<div class="caption">
+				<hr>
+				<h5><span class="glyphicon  glyphicon-user" aria-hidden="true"></span>  {{prof.AdminName}}</h5>
+				<h5><span class="glyphicon  glyphicon-envelope" aria-hidden="true"></span>  {{prof.AdminEmailId}}</h5>
+				<h5><span class="glyphicon  glyphicon-phone-alt" aria-hidden="true"></span>  {{prof.AdminPhoneNo}}</h5>
+				
+
+			</div>
+		</div>
+
+		{% endfor %}
+
+	</div>		
+
+	<div class="col-xs-9">
+
+		{% for prof in admin_prof%}
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><b>From {{prof.AdminType|lower|capfirst }}'s Words</b></div>
+			<div class="panel-body" style ='background-color: #DCDCDC';>
+				<p class="text-justify text-info "> {{prof.AdminWord|safe}}</p>
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+
+</div>
+<hr>
+<div class="row">
+
+	<div class="col-xs-6">
+
+	</div>
+
+	<div class="col-xs-6">
+
+	</div>
+
+</div>
+
+{% endblock %}

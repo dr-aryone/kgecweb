@@ -1,0 +1,123 @@
+{% extends "nav.html" %}
+{% block title %}
+<div class="panel panel-info" style ='background-color: #DCDCDC';>
+	<div class="panel-body">
+		<div class="row">   
+			<div class="col-xs-7">
+				<h2>Training And Placement Record <h2>
+				</div>
+				<div class="col-xs-5">
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+	{% block body %}
+	<div class="row">
+		
+		<div class="col-xs-6">
+
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th class="success"><small>Year</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
+					</tr>
+
+					{% for pdata in place_Data %}
+					{% if pdata.PrYear == current_year  %}
+
+					<tr>
+						<td >{{pdata.PrYear}}</td>
+						<td >{{pdata.PrCompany}}</td>
+						<td >{{pdata.PlacedStudent}}</td>
+						<td >{{pdata.MaxSalary}}</td>
+					</tr>
+					{% endif %}
+
+					{% endfor %}
+
+				</table>
+			</div>
+
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th class="success"><small>Year</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
+					</tr>
+
+					{% for pdata in place_Data %}
+					{% if pdata.PrYear == prev_year1  %}
+
+					<tr>
+						<td >{{pdata.PrYear}}</td>
+						<td >{{pdata.PrCompany}}</td>
+						<td >{{pdata.PlacedStudent}}</td>
+						<td >{{pdata.MaxSalary}}</td>
+					</tr>
+					{% endif %}
+
+					{% endfor %}
+
+				</table>
+			</div>
+
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th class="success"><small>Year</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
+					</tr>
+
+					{% for pdata in place_Data %}
+					{% if pdata.PrYear == prev_year2  %}
+
+					<tr>
+						<td >{{pdata.PrYear}}</td>
+						<td >{{pdata.PrCompany}}</td>
+						<td >{{pdata.PlacedStudent}}</td>
+						<td >{{pdata.MaxSalary}}</td>
+					</tr>
+					{% endif %}
+
+					{% endfor %}
+
+				</table>
+			</div>
+
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th class="success"><small>Year</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
+					</tr>
+
+					{% for pdata in place_Data %}
+					{% if pdata.PrYear == prev_year3 %}
+
+					<tr>
+						<td >{{pdata.PrYear}}</td>
+						<td >{{pdata.PrCompany}}</td>
+						<td >{{pdata.PlacedStudent}}</td>
+						<td >{{pdata.MaxSalary}}</td>
+					</tr>
+					{% endif %}
+
+					{% endfor %}
+
+				</table>
+			</div>	
+		</div>
+		<div class="col-xs-6">
+		</div>
+	</div>
+{% endblock %}

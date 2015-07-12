@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<h1>Add Student</h1>
+
+<form action="{% url "student_add" %}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+  {% csrf_token %}
+  <!-- ul>
+    {{form}}
+  </ul> -->
+  {{ form.non_field_errors }}
+  <table>
+ 
+<div class="form-group">
+ <tr>
+  <td>
+ {{ form.first_name.errors }}
+    <label for="{{ form.first_name.id_for_label }}" class="col-sm-2 control-label">FirstName</label>
+    </td>
+    <td>
+    {{ form.first_name}}
+    </td>
+    </tr>
+ </div>
+
+ <div class="form-group">
+ <tr>
+  <td>
+ {{ form.last_name.errors }}
+    <label for="{{ form.last_name.id_for_label }}" class="col-sm-2 control-label">LastName</label>
+    </td>
+    <td>
+    {{ form.last_name}}
+    </td>
+    </tr>
+ </div>
+
+ <div class="form-group">
+<tr>
+  <td>
+
+ {{ form.date_of_birth.errors }}
+    <label for="{{ form.date_of_birth.id_for_label }}"class="col-sm-2 control-label">DOB</label>
+</td>
+    <td>
+
+    {{ form.date_of_birth}}
+
+      </td>
+    </tr>
+ </div>
+
+ <div class="form-group">
+ <tr>
+  <td>
+ {{ form.department.errors }}
+    <label for="{{ form.department.id_for_label }}"class="col-sm-2 control-label">Department</label>
+</td>
+    <td>
+
+    {{ form.department}}
+  </td>
+    </tr>
+
+ </div>
+
+
+ <div class="form-group">
+  <tr>
+  <td>
+ {{ form.Year.errors }}
+    <label for="{{ form.Year.id_for_label }}"class="col-sm-2 control-label">Year</label>
+    </td>
+    <td>
+    {{ form.Year}}
+</td>
+    </tr>
+
+ </div>
+
+ <div class="form-group">
+<tr>
+  <td>
+
+ {{ form.docfile.errors }}
+    <label for="{{ form.docfile.id_for_label }}"class="col-sm-2 control-label">Image</label>
+
+    </td>
+    <td>
+    {{ form.docfile}}
+</td>
+    </tr>
+
+ </div>
+</table>
+
+  <!-- <input id="save_student" type="submit" value="Save" /> -->
+<div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  </div>
+  </div>
+</form>
+</div>
+<a href="{% url "student_list" %}">back to list</a>
+
+
+{% endblock %}

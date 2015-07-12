@@ -1,0 +1,186 @@
+{% load staticfiles %}
+
+<html>
+<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="Biswajit Pain" content="">
+
+  <title>Kgec-Website</title>
+
+
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}"rel="stylesheet" media="screen">
+  <link href="{% static 'css/bootstrap-social.css' %}"rel="stylesheet" media="screen">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+
+  <!-- Custom CSS -->
+  <link href="{% static 'css/portfolio-item.css' %}"rel="stylesheet" media="screen">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">KGEC</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="">About Us</a></li>
+              <li><a href="">History</a></li>
+              <li><a href="/administration/principal/">Principal's Desk</a></li>                   
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Academic <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/department/cse/">ComputerScience&Engineering(UG)</a></li>
+              <li><a href="/department/ece/">Electronics&CommunicationEngineering(UG)</a></li>
+              <li><a href="/department/ee/">ElectricalEngineering(UG)</a></li>
+              <li><a href="/department/it/">Information& Tecnology(UG)</a></li>
+              <li><a href="/department/me/">MechanicalEngineering(UG)</a></li>
+              <li class="divider"></li>
+              <li><a href="/department/mcse/">ComputerScience&Engineering(PG)</a></li>
+              <li><a href="/department/mme/">MechanicalEngineering(PG)</a></li>
+              <li><a href="/department/mca/">MastersOfComputerApplication(PG)</a></li>
+              <li class="divider"></li>
+              <li><a href="/department/phys/">DepartmentOfPhysics</a></li>
+              <li><a href="/department/chm/">DepartmentOfChemistry</a></li>
+              <li><a href="/department/math/">DepartmentOfMathematics</a></li>
+              <li><a href="/department/hu/">DepartmentOfHumanity</a></li>                 
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administration <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/administration/principal">Principal's Office</a></li>
+              <li><a href="/administration/registrar">Register's Office</a></li>
+              <li><a href="/administration/accounts">ACO's Office</a></li>
+              <li><a href="/notice/">Notice</a></li>
+              
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admission <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/admission/btech">B.Tech Admission</a></li>
+              <li><a href="/admission/mtech">M.Tech Admission</a></li>
+              <li><a href="/admission/mca">MCA Admission</a></li>  
+              
+              
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Training&Placement <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/trgplc">TPO's Desk</a></li>
+              <li><a href="">Activity</a></li>
+              <li><a href="/trgplc/record">Statistics</a></li>
+              <li><a href="">Notice</a></li>
+              <li><a href="">Registration</a></li>
+              
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Facilities<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="">CentralLibrary</a></li>
+              <li><a href="">Hostels</a></li>
+              <li><a href="">NKN</a></li>
+              <li><a href="">AAkash</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <div class="container">
+
+
+    {% block title %}
+    {% endblock %}
+
+
+    {% block body %}
+
+    {% endblock %}
+
+  </div>
+  <div id="footer">
+    <div class="container" >
+      <div class="row-fluid" >
+
+        <div class="panel panel-default" style ='background-color: #DCDCDC';>
+
+          <div class="panel-body" >
+           <div class="row">
+
+             <div class="col-xs-4">
+              <address>
+                <strong>Kalyani Government Engineering College</strong><br>
+                Kalyani, Nadia,Westbengal<br>
+                India, 741235<br>
+                <abbr title="Phone"><span class="glyphicon glyphicon glyphicon-phone-alt" aria-hidden="true"></span></ab
+
+                  <br> +91 3325821309
+                </address>
+                <address>
+                  <strong>Principal</strong><br>
+                  <a href="mailto:#">principal@kgec.ac.in</a>
+                </address>
+
+              </div>
+
+              <div class="col-xs-4">
+                <p class="text-center">Kalyani Government Engineering College</br> Copyright @ {% now "Y" %}</p>
+
+              </div>
+
+              <div class="col-xs-4">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="{% static 'js/jquery.js' %}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body> 
+
+</html>

@@ -1,0 +1,128 @@
+{% extends "nav.html" %}
+
+{% block body %}
+
+<div class="row">   
+	<div class="col-xs-7">
+		{% block title %}
+
+		<h2>Training And Placement <h2>
+
+
+			{% endblock %}
+		</div>
+		<div class="col-xs-5">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-xs-6">
+
+			{% block tpodata %}
+			{% for tpo in tpo_data %}
+			<p class="text-justify text-info "> {{ tpo.TpotDesk|safe }}</p>
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Traing & Placement Officer</b></h3>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<div class="media-left media-middle">
+							<a href="#">
+								<img class="img-rounded" src="{{ tpo.TpoImage.thumbnail.url }}" alt="{{ faculty.TpoImage.name }}" height="70" width="70">
+							</a>
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading"><b>Prof. {{ tpo.TpoName}}</b></h5>
+							<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  {{tpo.TpoEmailId}}<br>
+								<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{tpo.TopPhone1}},{{tpo.TopPhone2}}</p>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% endfor %}
+
+				{% endblock %}
+			</div>
+			<div class="col-xs-6">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title"><b>Placement In <i>[{% now "Y" %}]</i></b></h3>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-hover table-bordered">
+								<tr>
+									<th class="success"><small>Year</small></th>
+									<th class="success"><small>CompanyName</small></th>
+									<th class="success"><small>Placed Student</small></th>
+									<th class="success"><small>Salary(LPA)</small></th>
+								</tr>
+
+								{% for pdata in place_Data %}
+								
+								{% if pdata.PrYear == current_year %}
+
+								<tr>
+									<td >{{pdata.PrYear}}</td>
+									<td >{{pdata.PrCompany}}</td>
+									<td >{{pdata.PlacedStudent}}</td>
+									<td >{{pdata.MaxSalary}}</td>
+								</tr>
+								{% endif %}
+
+								
+								{% endfor %}
+
+
+
+							</table>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title"><b>Associated Company</b></h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-12">
+
+
+								{% block companydata %}
+								{% for company in company_Data %}
+
+								<div class="col-sm-3">
+									<a href="{{company.CompanyUrl}}">
+										<img class="img-rounded" src="{{ company.CompanyLogo.thumbnail.url }}" alt="{{ company.CompanyLogo.name }}" height="70" width="70">
+									</a>
+									<p class=" text-info "> <b><small>{{ company.CompanyName}}</small></b></p>
+								</div>
+
+								{% endfor %}
+								{% endblock %}
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+
+		{% endblock %}

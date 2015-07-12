@@ -1,0 +1,50 @@
+{% extends "nav.html" %}
+
+
+{% block title %}
+<div class="row">   
+	<div class="col-xs-7">
+		<h2>Notice<h2>
+			<div class="col-xs-5">
+			</div>
+
+		</div>
+	</div>
+	{% endblock %}
+	{% block body %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th class="active">NoticeTag</th>
+						<th class="active">Notice Type</th>
+						<th class="active">Published On</th>
+					</tr>
+
+					{% for notice in all_notice%}
+
+					<tr>
+						<td><a href="{{notice.NoticeFile.url}}">{{ notice.NoticeTag|capfirst}}</a></td>
+						<td>{{ notice.NoticeType|lower|capfirst}} </td>
+						<td>{{ notice.NoticeStartDate}}</td>
+					</tr>
+					{% endfor %}
+					{% for notice in one_notice%}
+
+					<tr>
+						<td><a href="{{notice.NoticeFile.url}}">{{ notice.NoticeTag|capfirst}}</a></td>
+						<td>{{ notice.NoticeType|lower|capfirst}} </td>
+						<td>{{ notice.NoticeStartDate}}</td>
+					</tr>
+					{% endfor %}
+
+				</table>
+				
+			</div>
+
+
+
+		</div>
+	</div>
+	{% endblock %}

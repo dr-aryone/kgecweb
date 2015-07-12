@@ -1,0 +1,143 @@
+{% extends "nav.html" %}
+
+
+{% block title %}
+<div class="row">   
+	<div class="col-xs-7">
+		
+
+		{% for dept in dept_list %}
+		<h3> <b>{{ dept.DeptFullName }} </b></h3> 
+		{% endfor %}
+
+		
+	</div>
+	<div class="col-xs-5">
+
+		<ul class="nav nav-pills">
+			<li role="presentation" class="active"><a href="#">Home</a></li>
+			<li role="presentation"><a href="#">In Dept</a> </li>
+			<li role="presentation"><a href="#">Messages</a></li>
+		</ul>
+
+	</div>
+	
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-xs-7">
+
+		{% block deptimage %}
+		{% for dept in dept_list %}
+		<img class="img-rounded img-responsive"src="{{ dept.DeptImage.large.url }}" alt="{{ dept.DeptImage.name }}" height="300" width="660">
+		{% endfor %}
+
+		{% endblock %}
+	</div>
+	<div class="col-xs-5">
+
+
+		{% block deptheader %}
+		{% for dept in dept_list %}
+		<div class="panel panel-info">
+			<div class="panel-heading"><b><i>Department of {{ dept.DeptFullName}}</i></b></div>
+			<div class="panel-body" style ='background-color: #DCDCDC';>
+
+				{% endfor %}
+				{% endblock %}
+				{% block hoddata %}
+				{% for faculty in faculty_list %}
+				{% for dept in dept_list %}
+				{% if faculty.FacultyName == dept.DeptOwner %}
+				<div class="media">
+					<div class="pull-left">
+						<a href="/faculty/{{faculty.FaculyId}}">
+							<img class="img-rounded" src="{{ faculty.FacultyImage.thumbnail.url }}" alt="{{ faculty.FacultyImage.name }}" height="70" width="70">
+						</a>
+					</div>
+					<div class="media-body">
+						<h5 class="media-heading"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> <b><i>{{ faculty.FacultyName}}</i></b></h5>
+						<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  {{faculty.FacultyEmail}}<br>
+						<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{faculty.FacultyContact}}</p>
+					
+					</div>
+
+					{% endif %}
+					{% endfor %}
+					{% endfor %}
+					{% endblock %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="row">
+	<div class="col-xs-7">
+		{% block faculty %}
+		<div class="panel panel-info">
+			<div class="panel-heading"><b><i>Faculties</i></b></div>
+			<div class="panel-body" style ='background-color: #DCDCDC';>
+				<div class="row">
+					{% for faculty in faculty_list %}
+					<div class="col-sm-2">
+						<a href="/faculty/{{faculty.FaculyId}}">
+							<img class="img-rounded" src="{{ faculty.FacultyImage.thumbnail.url }}" alt="{{ faculty.FacultyImage.name }}" height="70" width="70">
+						</a>
+						<small>{{ faculty.FacultyName}}</small>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		{% endblock %}
+	</div>
+	<div class="col-xs-5" >
+		{% block aboutdept %}
+		{% for dept in dept_list %}
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><b><i>From Head Of The Department</i></b></div>
+			<div class="panel-body" style ='background-color: #DCDCDC';>
+				<p class="text-justify"> {{ dept.DeptDescrip|safe }}</p>
+			</div>
+		</div>
+		{% endfor %}
+	
+		{% endblock %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+
+		{% block  staff %}
+		{% for staff in staff_list %}
+		<div class="col-sm-2">
+			<a href="#">
+				<img class="img-rounded" src="{{ staff.StaffImage.thumbnail.url }}" alt="{{ staff.StaffImage.name }}" height="142" width="142">
+			</a>
+			<b>{{ staff.StaffName}}</b>
+		</div>
+		{% endfor %}
+
+		{% endblock %}
+
+
+	</div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+

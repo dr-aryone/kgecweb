@@ -1,0 +1,50 @@
+{% extends "nav.html" %}
+{% block title %}
+<div class="panel panel-info" style ='background-color: #DCDCDC';>
+	<div class="panel-body">
+	{% for faculty in f_info %}
+<h4> <b>{{faculty.FacultyName}}</b></h4>
+	{% endfor %}
+</div>
+</div>
+{% endblock %}
+{% block body %}
+{% for faculty in f_info %}
+<div class="row">   
+	<div class="col-xs-3">
+	<div class="thumbnail">
+			<a href="#"><img class="img-rounded" src="{{ faculty.FacultyImage.thumbnail.url }}" alt="{{ faculty.FacultyImage.name }}" height="160" width="160"></a>
+			<div class="caption">
+				<hr>
+				<h5><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> <b> {{faculty.FacultyName}}</b></h5>
+				<h5><span class="glyphicon  glyphicon-envelope" aria-hidden="true"></span> {{faculty.FacultyEmail}}</h5>
+				<h5><span class="glyphicon  glyphicon-phone" aria-hidden="true"></span>{{faculty.FacultyContact}}</h5>
+				<h5><b>Department:</b> {{faculty.FacultyDept}}</h5>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="col-xs-9">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title"><b>About {{faculty.FacultyName}} </b></h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<p> Profile will Go Here </p>
+						{% for faculty in f_info %}
+						{{faculty.FacultyBio}}
+						{% endfor %}
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+{%endfor%}
+{% endblock%}

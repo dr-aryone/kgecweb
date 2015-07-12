@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>StudentsList</h1>
+
+ <table class="table">
+ <th>
+ <td>FirstName</td>
+ <td>LastName</td>
+ <td>DOB</td>
+ <td>Year</td>
+ <td>Dept</td>
+ <td>Img</td>
+ </th>
+  {% for student in object_list %}
+<tr>
+    <td class="info">{{ student.first_name }}</td>
+    <td class="info">{{ student.last_name }}</td>
+    <td class="info">{{ student.date_of_birth }}</td>
+    <td class="info">{{ student.Year }}</td>
+    <td class="info">{{ student.department }}</td>
+   <!-- <td class="info">{{ student.docfile.url }}</td>
+    <td class="info">{{ student.docfile.name }}</td> -->
+	<td class="info"><img src="{{ student.docfile.url }}" alt="{{ student.docfile.name }}" height="42" width="42"></td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+
+{% endblock %}
+{% block sidebar %}
+  <a href="{% url "student_add" %}">Add to list</a>
+{% endblock %}
