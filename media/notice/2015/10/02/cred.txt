@@ -1,0 +1,7 @@
+[Credentials]
+
+Bitbucket
+
+shyamkumar
+utm@ossim
+

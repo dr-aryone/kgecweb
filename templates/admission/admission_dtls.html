@@ -1,27 +1,30 @@
 {% extends "nav.html" %}
 
-{% block title %}
-<div class="panel panel-info" style ='background-color: #B0E0E6';>
-	<div class="panel-body">
+{% block header%}
+<div class="container">
+
 		<div class="row">   
 			<div class="col-xs-7">
 			{% for admission in admission_dtls%}
-				<h2>Admission{{admission.Admission_Type|upper}}<h2>
+				<h4>Admission{{admission.Admission_Type|upper}}<h4>
 			{% endfor %}
 
 				</div>
 				<div class="col-xs-5">
 				</div>
-			</div>
-		</div>
+			
 	</div>
+	<hr>
+	</div>
+
 	{% endblock %}
 
 
 	{% block body%}
+	<div class="container">
 
 	{% for admission in admission_dtls%}
 				<p>{{admission.Admission_Details}}<p>
 	{% endfor %}
-
+</div>
 	{% endblock %}
