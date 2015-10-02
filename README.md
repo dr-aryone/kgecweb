@@ -1,2 +1,9 @@
-# kgecweb
-Website For Kgec
+
+######
+Kgec Website redefined using Django
+######
+
+#
+About
+#
+
