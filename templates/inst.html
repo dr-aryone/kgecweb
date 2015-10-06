@@ -1,90 +1,144 @@
 {% extends "nav.html" %}
 
+<!-- Header part start hear , inludes  institution logo its bellow of nav bar and its contais the header of -->
+{% block header %}
 
-{% block title %}
-<div class="panel panel-info" style ='background-color: #B0E0E6';>
+<div class = "container">
+	<div class="row">
+		<div class="col-xs-5">
+			{% for inst in inst_data %}
+			<img class="img-responsive" src="{{ inst.InstLogo.url }}" alt="{{ inst.InstLogo.name }}" height="75" width="450">
+			{% endfor %}
 
-	<div class="panel-body">
+		</div>
+		<div class="col-xs-5" >
 
-		<div class="row ">
-			<div class="col-xs-5">
-				{% for inst in inst_data %}
-				<img class="img-responsive" src="{{ inst.InstLogo.url }}" alt="{{ inst.InstLogo.name }}" height="75" width="450">
-				{% endfor %}
-
-			</div>
-			<div class="col-xs-5" >
-
-			</div>
-			<div class="col-xs-2">
-
-				<h5><p class="text-info">{% now "D d M Y " %}-{% now "H:i" %}</p></h5>
-
-				<a class="btn btn-social-icon btn-twitter">
-					<i class="fa fa-twitter"></i>
-				</a>
-				<a class="btn btn-social-icon btn-facebook">
-					<i class="fa fa-facebook"></i>
-				</a>
-				<a class="btn btn-social-icon btn-linkedin">
-					<i class="fa fa-linkedin"></i>
-				</a>
-				<a class="btn btn-social-icon btn-google-plus">
-					<i class="fa fa-google-plus"></i>
-				</a>
-			</div>
 		</div>
 
-	</div>
-</div>
+		<div class="col-xs-2" >
+			<h5><p class="text-info">{% now "D d M Y " %}-{% now "H:i" %}</p></h5>
+		</div>
 
-{% endblock title %}
+
+	</div>
+	<!-- </div> -->
+</div>
+<hr>
+{% endblock header %}
 <hr>
 
 {% block body %}
-<div class="row row-no-padding">
-	<div class="col-xs-7 ">
-		{% block deptimage%}
-		{% for scrollimg in inst_sc_img %}
 
-		<img class="img-rounded img-responsive" src="{{ scrollimg.ImageScroll.url }}" alt="{{ scrollimg.ImageScroll.name }}" height="300" width="675">
+<div class="container">
+	<div class="row row-no-padding">
+		<div class="col-xs-8 ">
 
-		{% endfor %}
-		{% endblock %}
-	</div>
-	<div class="col-xs-3" >
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>News& Updates</i></b></div>
-			<div class="panel-body">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="6"></li>
+				</ol>
 
-				{% for notice in  noti_notice%}
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="/media/Institute/ScrollImage/16920624300_21d2e71a6c_o.large.jpg" alt="...">
+						<div class="carousel-caption">
+							<h3>Front Page</h3>
+						</div>
+					</div>
+					{% block deptimage%}
+					{% for scrollimg in inst_sc_img %}
 
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
+					<div class="item">
+						<img class="img-rounded img-responsive" src="{{ scrollimg.ImageScroll.large.url }}" alt="{{ scrollimg.ImageScroll.name }}" height="300" width="700">
+						<div class="carousel-caption">
 
-				{% endfor %}
+							<h3>{{scrollimg.ImageDes}}</h3>
 
-				{% for notice in reg_notice %}
+						</div>
+					</div>
 
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
 
-				{% endfor %}
-				{% for notice in  pri_notice%}
+					{% endfor %}
+					{% endblock %}
 
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
+				</div>
 
-				{% endfor %}
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div> <!-- Carousel -->
+			<h4><p class="bg-primary"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b>Mission & Vision</b></p></h4>
 
-				{% for notice in aco_notice %}
 
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
 
-				{% endfor %}
+			{% for inst in inst_data %}
+			<span>
+				<p class="text-justify text-info "> <b>{{ inst.InstDescrip|safe }}</b></p>
+			</span>
 
-			</div>
+			{% endfor %}
+
+
 		</div>
+		<div class="col-xs-4" >
+			<div class="panel panel-primary">
+				<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>News& Updates</i></b></div>
+				<div class="panel-body">
 
-	</div>
-	<div class="col-xs-2"  >
+					{% for notice in  noti_notice%}
+
+					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}  <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
+
+					{% endfor %}
+
+					{% for notice in reg_notice %}
+
+					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
+
+					{% endfor %}
+					{% for notice in  pri_notice%}
+
+					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
+
+					{% endfor %}
+
+					{% for notice in aco_notice %}
+
+					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
+
+					{% endfor %}
+
+					{% for notice in aco_notice %}
+
+					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
+
+					{% endfor %}
+
+				</div>
+			</div>
+
+		</div>
+</div>
+
+<hr>
+
+<div class="row">
+
+
+	<div class="col-xs-5"  >
+		<h4><p class="bg-primary"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b>Events</b></p></h4>
 		<ul class="list-group">
 
 			{% for special_event in special_event %}
@@ -93,12 +147,12 @@
 				<div class="media">
 					<div class="pull-left">
 						<a href="#">
-							<img class= "img-rounded img-responsive" src="{{ special_event.Event_Image.thumbnail.url }}" alt="{{ special_event.Event_Image.name }}" height="50" width="50">
+							<img class= "img-rounded img-responsive" src="{{ special_event.Event_Image.thumbnail.url }}" alt="{{ special_event.Event_Image.name }}" height="60" width="60">
 						</a>
 					</div>
 					<div class="media-body">
-						<h5 class="media-heading"><a href="#"><small>{{special_event.Events_Name|truncatechars:17}}</small></a></h5>
-						<!-- <p class="text-info "> <small>{{special_event.Events_Descriptions|safe|truncatechars:30}}</small></p>	 -->
+						<h5 class="media-heading"><a href="#">{{special_event.Events_Name|truncatechars:30}}</a></h5>
+						<p class="text-info "> <small>{{special_event.Events_Descriptions|safe|truncatechars:200}}</small></p>	
 					</div>
 
 				</div>
@@ -106,63 +160,12 @@
 
 			{% endfor %}
 		</ul>
-	</div>
+	</div> 
+
+
+<div class="col-xs-6" >
 
 </div>
-
-<hr>
-
-<div class="row">
-
-	<div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>Campus Placements</i></b></div>
-			<div class="panel-body">
-
-				{% for notice in plc_notice %}
-
-				<li><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-
-			</div>
-		</div>
-
-	</div>
-
-	<div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>Tender Notice</i></b></div>
-			<div class="panel-body">
-
-				{% for notice in tndr_notice %}
-
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-
-			</div>
-		</div>
-
-	</div>
-
-
-	<div class="col-xs-6" >
-		{% block aboutdept %}
-		{% for inst in inst_data %}
-		<div class="panel panel-default">
-			<div class="panel-heading"><b>Mission & Vision</b></div>
-			<div class="panel-body" style ='background-color: #DCDCDC';>
-				<p class="text-justify text-info "> {{ inst.InstDescrip|safe }}</p>
-			</div>
-		</div>
-
-		{% endfor %}
-		{% endblock %}
-
-	</div>
 </div>
 
 <hr>
@@ -223,6 +226,7 @@
 
 	</div>
 
+</div>
 </div>
 
 {% endblock %}

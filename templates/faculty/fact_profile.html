@@ -1,5 +1,6 @@
 {% extends "nav.html" %}
-{% block title %}
+{% block header %}
+<div class="container">
 <div class="panel panel-info" style ='background-color: #DCDCDC';>
 	<div class="panel-body">
 	{% for faculty in f_info %}
@@ -7,9 +8,12 @@
 	{% endfor %}
 </div>
 </div>
-{% endblock %}
+</div>
+{% endblock header%}
 {% block body %}
+<div class="container">
 {% for faculty in f_info %}
+
 <div class="row">   
 	<div class="col-xs-3">
 	<div class="thumbnail">
@@ -46,5 +50,8 @@
 
 	</div>
 </div>
+
 {%endfor%}
+
+</div>
 {% endblock%}
