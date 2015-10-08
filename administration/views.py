@@ -24,6 +24,7 @@ def InstituteDetails(request):
     Reg_notice = Notice.objects.filter(NoticeType='REGISTRAR').order_by('NoticeStartDate').reverse()[:5]
     Pri_notice = Notice.objects.filter(NoticeType='PRINCIPAL').order_by('NoticeStartDate').reverse()[:5]
     Aco_notice = Notice.objects.filter(NoticeType='ACCOUNTS').order_by('NoticeStartDate').reverse()[:5]
+    
 
 
     context = {'inst_data': Institute_Data,'inst_sc_img':Institute_scroll_image,'inst_notice':Inst_notice,\
@@ -35,7 +36,7 @@ def InstituteDetails(request):
 
 
 def NoticeDetails(request):
-	All_notice = Notice.objects.all().order_by('NoticeStartDate').reverse()[:10]
+	All_notice = Notice.objects.all().order_by('NoticeStartDate').reverse()
 	context = {'all_notice':All_notice}
 	return  render(request,'notice/notice.html',context)
 

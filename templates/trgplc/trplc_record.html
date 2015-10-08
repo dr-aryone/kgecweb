@@ -5,15 +5,17 @@
 
 	<div class="row">   
 			<div class="col-xs-7">
-<h3> Training and Placement</h3>
+			<h4 style="display:inline";><b><i>Placement Statictics </i></b></h4>
+
 			</div>
 			<div class="col-xs-5">
 
 			</div>
 
 		</div>
-<hr>
+
 </div>
+<hr>
 	{% endblock %}
 	{% block body %}
 	<div class="container">
@@ -22,7 +24,7 @@
 		<div class="col-xs-6">
 
 			<div class="table-responsive">
-				<table class="table table-hover table-bordered">
+				<table class="table table-hover table-bordered ">
 					<tr>
 						<th class="success"><small>Year</small></th>
 						<th class="success"><small>CompanyName</small></th>
@@ -34,10 +36,10 @@
 					{% if pdata.PrYear == current_year  %}
 
 					<tr>
-						<td >{{pdata.PrYear}}</td>
-						<td >{{pdata.PrCompany}}</td>
-						<td >{{pdata.PlacedStudent}}</td>
-						<td >{{pdata.MaxSalary}}</td>
+						<td ><small>{{pdata.PrYear}}</small></td>
+						<td ><small>{{pdata.PrCompany}}</small></td>
+						<td ><small>{{pdata.PlacedStudent}}</small></td>
+						<td ><small>{{pdata.MaxSalary}}</small></td>
 					</tr>
 					{% endif %}
 
@@ -59,10 +61,10 @@
 					{% if pdata.PrYear == prev_year1  %}
 
 					<tr>
-						<td >{{pdata.PrYear}}</td>
-						<td >{{pdata.PrCompany}}</td>
-						<td >{{pdata.PlacedStudent}}</td>
-						<td >{{pdata.MaxSalary}}</td>
+						<td ><small>{{pdata.PrYear}}</small></td>
+						<td ><small>{{pdata.PrCompany}}</small></td>
+						<td ><small>{{pdata.PlacedStudent}}</small></td>
+						<td ><small>{{pdata.MaxSalary}}</small></td>
 					</tr>
 					{% endif %}
 
@@ -84,10 +86,10 @@
 					{% if pdata.PrYear == prev_year2  %}
 
 					<tr>
-						<td >{{pdata.PrYear}}</td>
-						<td >{{pdata.PrCompany}}</td>
-						<td >{{pdata.PlacedStudent}}</td>
-						<td >{{pdata.MaxSalary}}</td>
+						<td ><small>{{pdata.PrYear}}</small></td>
+						<td ><small>{{pdata.PrCompany}}</small></td>
+						<td ><small>{{pdata.PlacedStudent}}</small></td>
+						<td ><small>{{pdata.MaxSalary}}</small></td>
 					</tr>
 					{% endif %}
 
@@ -109,10 +111,10 @@
 					{% if pdata.PrYear == prev_year3 %}
 
 					<tr>
-						<td >{{pdata.PrYear}}</td>
-						<td >{{pdata.PrCompany}}</td>
-						<td >{{pdata.PlacedStudent}}</td>
-						<td >{{pdata.MaxSalary}}</td>
+						<td ><small>{{pdata.PrYear}}</small></td>
+						<td ><small>{{pdata.PrCompany}}</small></td>
+						<td ><small>{{pdata.PlacedStudent}}</small></td>
+						<td ><small>{{pdata.MaxSalary}}</small></td>
 					</tr>
 					{% endif %}
 

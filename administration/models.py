@@ -87,7 +87,8 @@ class Notice(models.Model):
 	NoticeTag = models.CharField(max_length=30)
 	NoticeStartDate = models.DateField(auto_now_add=True)
 	NoticeEndDate = models.DateField()
-	NoticeFile = models.FileField(upload_to='notice/%Y/%m/%d')
+	NoticeFile = models.FileField(default='#',upload_to='notice/%Y/%m/%d')
+	NoticeContent = models.TextField(default='NA')
 
 	def __str__(self):
 		return self.NoticeTag

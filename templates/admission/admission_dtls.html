@@ -3,28 +3,28 @@
 {% block header%}
 <div class="container">
 
-		<div class="row">   
-			<div class="col-xs-7">
+	<div class="row">   
+		<div class="col-xs-7">
 			{% for admission in admission_dtls%}
-				<h4>Admission{{admission.Admission_Type|upper}}<h4>
+			<h4 style="display:inline";><b><i>Admission {{admission.Admission_Type|upper}}</i></b></h4>
+
 			{% endfor %}
 
-				</div>
-				<div class="col-xs-5">
-				</div>
-			
+		</div>
+		<div class="col-xs-5">
+		</div>
+
 	</div>
-	<hr>
-	</div>
+</div>
+<hr>
 
-	{% endblock %}
+{% endblock %}
 
-
-	{% block body%}
-	<div class="container">
+{% block body%}
+<div class="container">
 
 	{% for admission in admission_dtls%}
-				<p>{{admission.Admission_Details}}<p>
-	{% endfor %}
-</div>
+	<p>{{admission.Admission_Details}}<p>
+		{% endfor %}
+	</div>
 	{% endblock %}

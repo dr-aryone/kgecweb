@@ -6,7 +6,8 @@
 <div class="container">
 <div class="row">   
 	<div class="col-xs-7">
-		<h4>Notice<h4>
+	<h4 style="display:inline";><b><i>Notice</i></b></h4>
+	</div>
 			<div class="col-xs-5">
 			</div>
 
@@ -19,29 +20,54 @@
 	{% block body %}
 	<div class="container">
 	<div class="row">
-		<div class="col-xs-12">
+
+
+
+	</div>
+	
+
+	<div class="row">
+		<div class="col-xs-8">
+
 			<div class="table-responsive">
 				<table class="table table-hover table-bordered">
 					<tr>
-						<th class="active">NoticeTag</th>
-						<th class="active">Notice Type</th>
-						<th class="active">Published On</th>
+						<th class="active"><small>NoticeTag</small></th>
+						<th class="active"><small>Notice Type</small></th>
+						<th class="active"><small>Published On</small></th>
+						<th class="active"><small>Valid To</small></th>
+						<th class="active"><small>Download</small></th>
+						
+
 					</tr>
 
 					{% for notice in all_notice%}
 
 					<tr>
-						<td><a href="{{notice.NoticeFile.url}}">{{ notice.NoticeTag|capfirst}}</a></td>
-						<td>{{ notice.NoticeType|lower|capfirst}} </td>
-						<td>{{ notice.NoticeStartDate}}</td>
+						<td><small>{{ notice.NoticeTag|capfirst}}</small></td>
+						<td><small>{{ notice.NoticeType|lower|capfirst}} </small></td>
+						<td><small>{{ notice.NoticeStartDate}}</small></td>
+						<td><small>{{ notice.NoticeEndDate}}</small></td>
+						<td><a href="{{notice.NoticeFile.url}}" <i class="fa fa-download fa-lg "></i></a></td>
+						
+
+
+
+
+
+
+
+
 					</tr>
 					{% endfor %}
 					{% for notice in one_notice%}
 
 					<tr>
-						<td><a href="{{notice.NoticeFile.url}}">{{ notice.NoticeTag|capfirst}}</a></td>
-						<td>{{ notice.NoticeType|lower|capfirst}} </td>
-						<td>{{ notice.NoticeStartDate}}</td>
+						<td><small>{{ notice.NoticeTag|capfirst}}</small></td>
+						<td><small>{{ notice.NoticeType|lower|capfirst}} </small></td>
+						<td><small>{{ notice.NoticeStartDate}}</small></td>
+						<td><small>{{ notice.NoticeEndDate}}</small></td>
+						<td><a href="{{notice.NoticeFile.url}}" <i class="fa fa-download fa-lg "></i></a></td>
 					</tr>
 					{% endfor %}
 

@@ -4,7 +4,7 @@ from django.contrib import admin
 from  administration.models import Notice ,AdminProf ,Institution, InstScrollImage , Special_Events , Admission 
 
 class NoticeAdmin(admin.ModelAdmin):
-    list_display = ('id','NoticeType','NoticeTag', 'NoticeStartDate', 'NoticeEndDate','NoticeFile')
+    list_display = ('id','NoticeType','NoticeTag', 'NoticeStartDate', 'NoticeEndDate','NoticeContent','NoticeFile')
 admin.site.register(Notice, NoticeAdmin)
 
 

@@ -1,0 +1,29 @@
+html { font-size: 100%; }
+body { line-height: 1.6875; font-family: 'Lato', arial, helvetica, sans-serif; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Bitter', arial, helvetica, sans-serif; font-weight: 700; margin-top: 0; line-height: 1.1; }
+h1 { font-size: 200%; }
+h2 { font-size: 180%; }
+h3 { font-size: 160%; }
+h4 { font-size: 120%; }
+h5 { font-size: 100%; }
+h6 { font-size: 80%; }
+p { color: #666; font-size: 100%; font-weight: 500; margin-bottom: 5%; }
+
+
+
+
+
+@media (min-width: 768px) {
+  body { font-size: 80%; }
+
+}
+
+@media (min-width: 992px) {
+  body { font-size: 100%; }
+
+}
+
+@media (min-width: 1200px) {
+  body { font-size: 120%; }
+
+}
