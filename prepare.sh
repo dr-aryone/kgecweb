@@ -4,10 +4,10 @@
   sudo apt-get update
 
   echo "Install Python Software Properties"
-  sudo apt-get install python-software-properties
+  sudo apt-get install python-software-properties -y
 
   echo "Jpeg Support for PIL"
-  sudo apt-get install libjpeg-dev
+  sudo apt-get install libjpeg-dev -y
 
   echo "Install libmysqlclient dev"
-  sudo apt-get install libmysqlclient-dev
+  sudo apt-get install libmysqlclient-dev -y
