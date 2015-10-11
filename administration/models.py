@@ -40,7 +40,7 @@ class AdminProf(models.Model):
 class InstScrollImage(models.Model):
 	ImageDes = models.CharField(max_length=30)
 	#ImageScroll = models.ImageField(upload_to='Institute/ScrollImage/')
-	ImageScroll = StdImageField(upload_to='Institute/ScrollImage/',  variations={'large': (675, 300,True)})
+	ImageScroll = StdImageField(upload_to='Institute/ScrollImage/',  variations={'large': (700, 300,True)})
 
 	def __str__(self):
 		return  self.ImageDes
