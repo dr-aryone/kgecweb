@@ -3,20 +3,29 @@
 <!-- Header part start hear , inludes  institution logo its bellow of nav bar and its contais the header of -->
 {% block header %}
 
-<div class = "container">
+<div class = "container" >
 	<div class="row">
-		<div class="col-xs-5">
+		<div class="col-xs-2">
 			{% for inst in inst_data %}
-			<img class="img-responsive" src="{{ inst.InstLogo.url }}" alt="{{ inst.InstLogo.name }}" height="75" width="450">
+			<img class="img-responsive" src="{{ inst.InstLogo.url }}" alt="{{ inst.InstLogo.name }}" height="75" width="130">
 			{% endfor %}
 
+		</div >
+		<div class="col-xs-7">
+			<h3 style="color:#000000">
+				<b class="text" style="font-family: 'Merriweather Sans Regular', Arial, sans-serif";>
+				KALYANI GOVERNMENT ENGINEERING COLLEGE
+				</b>
+			</h3>
+			<h5 style="color:#000000">
+				<p class="text" style="font-family:sans-serif";>
+				Kalyani, Nadia, West Bengal - 741235 (India)
+				</p>
+			</h3>
 		</div>
-		<div class="col-xs-5" >
-
-		</div>
-
-		<div class="col-xs-2" >
-			<h5><p class="text-info">{% now "D d M Y " %}-{% now "H:i" %}</p></h5>
+	
+		<div class="col-xs-3" >
+			<h5><p class="text-info" style="color:#000000">{% now "D d M Y " %}- {% now "H:i" %}</p></h5>
 		</div>
 
 
@@ -25,7 +34,7 @@
 </div>
 <hr>
 {% endblock header %}
-<hr>
+<hr / stycolor="black">
 
 {% block body %}
 
@@ -94,7 +103,7 @@
 		</div>
 		<div class="col-xs-4" >
 			<div class="panel panel-primary">
-				<div class="panel-heading"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b><i>News& Updates</i></b></div>
+				<div class="panel-heading"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b><i>News & Updates</i></b></div>
 				<div class="panel-body">
 
 					{% for notice in  noti_notice%}
