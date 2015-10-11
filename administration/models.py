@@ -38,9 +38,9 @@ class AdminProf(models.Model):
 
 
 class InstScrollImage(models.Model):
-	ImageDes = models.CharField(max_length=30)
+	ImageDes = models.CharField(max_length=100)
 	#ImageScroll = models.ImageField(upload_to='Institute/ScrollImage/')
-	ImageScroll = StdImageField(upload_to='Institute/ScrollImage/',  variations={'large': (675, 300,True)})
+	ImageScroll = StdImageField(upload_to='Institute/ScrollImage/',  variations={'large': (700, 300,True)})
 
 	def __str__(self):
 		return  self.ImageDes
@@ -50,10 +50,11 @@ class InstScrollImage(models.Model):
 class Institution(models.Model):
 	InstName = models.CharField(max_length = 50,primary_key=True)
 	#InstLogo = models.ImageField(upload_to='Institute/Image/')
+	InstStartDate = models.DateField(auto_now=False)
 	InstLogo = StdImageField(upload_to='Institute/Image/',  variations={'large': (500, 150,True)})
 	InstDescrip = models.TextField()
 	InstOwner = models.ForeignKey(AdminProf)
-	InstImages = models.ForeignKey(InstScrollImage)
+	InstImages = StdImageField(upload_to='Institute/InstImage/',  variations={'large': (700, 300,True)})
 	
 	def __str__(self):
 		return self.InstName
