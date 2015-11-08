@@ -6,6 +6,7 @@ from django.conf import settings
 from dept.views import dept ,faculty
 from administration.views import InstituteDetails ,NoticeDetails, NoticeSingle, AdminProfile , AdmissionDtl
 from trplc.views import TraingPlacement ,TraingPlacementRecord
+from contact.views import Contact
 
 
 urlpatterns = [
@@ -25,6 +26,7 @@ urlpatterns = [
     #url(r'^student/', student.view),
     url(r'^student/list/$', ListStudentView.as_view(),name='student_list',),
     url(r'^student/create/$', CreateStudentView.as_view(),name='student_add',),
+    url(r'^contact/$', Contact,name='contact'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
