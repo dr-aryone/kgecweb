@@ -1,245 +1,166 @@
 {% extends "nav.html" %}
 
-<!-- Header part start hear , inludes  institution logo its bellow of nav bar and its contais the header of -->
-{% block header %}
-
-<div class = "container" >
-	<div class="row col-condensed	">
-		<div class="col-md-2" style="padding-right:0px";>
-
-			{% for inst in inst_data %}
-			<img class="img-responsive" src="{{ inst.InstLogo.url }}" alt="{{ inst.InstLogo.name }}" height="120" width="120" >
-			{% endfor %}
-
-		</div>
-		<div class="col-xs-8"style="padding-left:0px">
-			{% for inst in inst_data %}
-			<b class="text" style="font-size: 25px";>
-				{{ inst.InstName }}
-			</b>
-			{% endfor %}
-			<h5 style="color:#000000">
-				<p class="text" style="font-family:sans-serif";>
-					Kalyani, Nadia, West Bengal - 741235 (India)
-				</p>
-			</h5>
-		</div> 
-
-		<div class="col-xs-2" >
-			<h5><p class="text-info" style="color:#000000">{% now "D d M Y " %}- {% now "H:i" %}</p></h5>
-		</div>
-
-
-	</div>
-
-</div>
-<hr>
-{% endblock header %}
-
-
 {% block body %}
 
-<div class="container">
-	<div class="row row-no-padding">
-		<div class="col-xs-8 ">
+<!--=========== BEGIN SLIDER SECTION ================-->
+    <section id="slider">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="slider_area">
+            <!-- Start super slider -->
+            <div id="slides">
+              <ul class="slides-container">                          
+                <li>            
+                  {% for inst in inst_data %}
 
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="5"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="6"></li>
-				</ol>
+                  <img src="/static/img/slider/2.jpg" alt="{{ inst.InstImages.name }}">
+                  {% endfor %}
+                  
+                   <div class="slider_caption">
+                    <h2>Kalyani Government Engineering College</h2>
+                    <p>The best college all over the West Bengal under Maulana Abul Kalam Azad University of Technology.</p>
+                    <a class="slider_btn" href="#">Know More</a>
+                  </div>
+                  </li>
+                <!-- Start single slider-->
+                {% block deptimage%}
+                {% for scrollimg in inst_sc_img %}
+                <li>
+                  <img src="{{ scrollimg.ImageScroll.large.url }}" alt="{{ scrollimg.ImageScroll.name }}">
+                   <div class="slider_caption slider_right_caption">
+                    <h2>{{ scrollimg.ImageScroll.name }}</h2>
+                    <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p> -->
+                    <a class="slider_btn" href="#">Know More</a>
+                  </div>
+                </li>
+                {% endfor %}
+                {% endblock %}
+              </ul>
+              <nav class="slides-navigation">
+                <a href="#" class="next"></a>
+                <a href="#" class="prev"></a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=========== END SLIDER SECTION ================-->
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-					{% for inst in inst_data %}
-						<img class="img-rounded img-responsive"src="{{inst.InstImages.large.url}}" alt="{{inst.InstImages.name}}" height="300" width="780">
+    <!--=========== BEGIN ABOUT US SECTION ================-->
+    <section id="aboutUs">
+      <div class="container">
+        <div class="row">
+        <!-- Start about us area -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="aboutus_area wow fadeInLeft">
+            <h2 class="titile">About Us</h2>
+            <p>Kalyani Government Engineering College is the best college all over the West Bengal under Maulana Abul Kalam Azad University of Technology (formerly - West Bengal University of Technology).</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="newsfeed_area wow fadeInRight">
+            <ul class="nav nav-tabs feed_tabs" id="myTab2">
+              <li class="active"><a href="#notice" data-toggle="tab">Notice</a></li>
+              <li><a href="#events" data-toggle="tab">Events</a></li>         
+            </ul>
 
-					{% endfor %}
-						<div class="carousel-caption">
-							<h3>Front Page</h3>
-						</div>
-					</div>
-					{% block deptimage%}
-					{% for scrollimg in inst_sc_img %}
-
-					<div class="item">
-						<img class="img-rounded img-responsive" src="{{ scrollimg.ImageScroll.large.url }}" alt="{{ scrollimg.ImageScroll.name }}" height="300" width="780">
-						<div class="carousel-caption">
-
-							<h3>{{scrollimg.ImageDes}}</h3>
-
-						</div>
-					</div>
-
-
-					{% endfor %}
-					{% endblock %}
-
-				</div>
-
-				<!-- Controls -->
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div> <!-- Carousel -->
-			<h4><p class="bg-primary"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b>Mission & Vision</b></p></h4>
-
-
-
-			{% for inst in inst_data %}
-			<span>
-				<p class="text-justify text-info "> <b>{{ inst.InstDescrip|safe }}</b></p>
-			</span>
-
-			{% endfor %}
-
-
-		</div>
-		<div class="col-xs-4" >
-			<div class="panel panel-primary">
-				<div class="panel-heading"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b><i>News & Updates</i></b></div>
-				<div class="panel-body">
-
-					{% for notice in  noti_notice%}
-
-					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}  <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
-
-					{% endfor %}
-
-					{% for notice in reg_notice %}
-
-					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
-
-					{% endfor %}
-					{% for notice in  pri_notice%}
-
-					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
-
-					{% endfor %}
-
-					{% for notice in aco_notice %}
-
-					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
-
-					{% endfor %}
-
-					{% for notice in aco_notice %}
-
-					<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}} <small>({{notice.NoticeType|lower|capfirst}})</small></a></li>
-
-					{% endfor %}
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<hr>
-
-	<div class="row">
-
-
-		<div class="col-xs-5"  >
-			<h4><p class="bg-primary"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><b>Events</b></p></h4>
-			<ul class="list-group">
-
-				{% for special_event in special_event %}
-				<li class="list-group-item">
-
-					<div class="media">
-						<div class="pull-left">
-							<a href="#">
-								<img class= "img-rounded img-responsive" src="{{ special_event.Event_Image.thumbnail.url }}" alt="{{ special_event.Event_Image.name }}" height="60" width="60">
-							</a>
-						</div>
-						<div class="media-body">
-							<h5 class="media-heading"><a href="#">{{special_event.Events_Name|truncatechars:30}}</a></h5>
-							<p class="text-info "> <small>{{special_event.Events_Descriptions|safe|truncatechars:200}}</small></p>	
-						</div>
-
-					</div>
-				</li>
-
-				{% endfor %}
-			</ul>
-		</div> 
-
-
-		<div class="col-xs-6" >
-
-		</div>
-	</div>
-
-	<hr>
-
-	<div class="row">
-	<!-- <div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>Training</i></b></div>
-			<div class="panel-body">
-				{% for notice in trng_notice %}
-
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>Exam & Result</i></b></div>
-			<div class="panel-body">
-				{% for notice in res_notice %}
-
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-				{% for notice in exam_notice %}
-
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon glyphicon-comment" aria-hidden="true"></span><b><i>Academic Announcement</i></b></div>
-			<div class="panel-body">
-				{% for notice in aca_notice %}
-
-				<li ><a href="/notice/{{notice.id}}">{{notice.NoticeTag}}</a></li>
-
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><b>RTI</b></div>
-			<div class="panel-body">
-				Panel content
-			</div>
-		</div>
-
-	</div>	 -->
-
-</div>
-</div>
-
-{% endblock %}
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="notice">
+                <div class="single_notice_pane">
+                  <ul class="news_tab">
+                    {% for notice in  noti_notice %}
+                    <li>
+                        <div class="media-body">
+                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
+                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+				                </div>                   
+                    </li>
+                    {% endfor %}                         
+                  </ul>
+                  <ul class="news_tab">
+                  {% for notice in  reg_notice %}
+                    <li>
+                        <div class="media-body">
+                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
+                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+                        </div>                   
+                    </li>
+                    {% endfor %}                         
+                  </ul>
+                  <ul class="news_tab">
+                  {% for notice in  pri_notice %}
+                    <li>
+                        <div class="media-body">
+                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
+                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+                        </div>                   
+                    </li>
+                    {% endfor %}                         
+                  </ul>
+                  <ul class="news_tab">
+                  {% for notice in  aco_notice %}
+                    <li>
+                        <div class="media-body">
+                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
+                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+                        </div>                   
+                    </li>
+                    {% endfor %}                         
+                  </ul>
+                </div>               
+              </div>
+              <!-- Start events tab content -->
+              <div class="tab-pane fade " id="events">
+                <ul class="news_tab">
+                  <li>
+                    <div class="media">
+                      <div class="media-left">
+                        <a class="news_img" href="#">
+                          <img class="media-object" src="img/news.jpg" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                       <a href="#">Dummy text of the printing and typesetting industry</a>
+                       <span class="feed_date">27.02.15</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <div class="media-left">
+                        <a class="news_img" href="#">
+                          <img class="media-object" src="img/news.jpg" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                       <a href="#">Dummy text of the printing and typesetting industry</a>
+                       <span class="feed_date">28.02.15</span>                
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <div class="media-left">
+                        <a class="news_img" href="#">
+                          <img class="media-object" src="img/news.jpg" alt="img">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                       <a href="#">Dummy text of the printing and typesetting industry</a>
+                       <span class="feed_date">28.02.15</span>                
+                      </div>
+                    </div>
+                  </li>                  
+                </ul>
+                <a class="see_all" href="#">See All</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--=========== END ABOUT US SECTION ================--> 
+    {% endblock %}

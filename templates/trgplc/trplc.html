@@ -1,127 +1,142 @@
 {% extends "nav.html" %}
 
-{% block header %}
-<div class="container">
-
-
-	<div class="row">   
-			<div class="col-xs-7">
-<h4 style="display:inline";><b><i>Training and Placement </i></b></h4>
-
-
-			</div>
-			<div class="col-xs-5">
-
-			</div>
-
+{% block body %}
+<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
+	<div class="container" >
+		<div class="col-lg-12 col-md-12"> 
+    		<div class="title_area">
+        		<h2 class="title_two">Training & Placement</h2>
+    			<span style="width:200px"></span> 
+    			{% for tpo in tpo_data %}
+        		<p class="text-justify">{{ tpo.TpotDesk|safe }}</p>
+        		{% endfor %}
+        	</div>
 		</div>
-
+	</div>
 </div>
-<hr>
+
+
+<!--=========== BEGIN TPO Section ================-->
+{% block tpodata %}
+{% for tpo in tpo_data %}
+<div class="container-fluid ">
+	<div class="container" style="padding-top:20px" >
+		<div class="col-lg-12 col-md-12"> 
+    		<div class="title_area">
+        		<h2 class="title_two">Training & Placement Officer</h2>
+    			<span style="width:200px"></span> 
+    		</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+			<div class="pull-right">
+				<a href="#">
+					<img class="img-rounded" src="{{ tpo.TpoImage.thumbnail.url }}" alt="{{ faculty.TpoImage.name }}" height="140" width="140">
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+			<div class="media-body">
+					<br />
+					<br />
+					<h4 class="media-heading"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span><b>    Prof. {{ tpo.TpoName}}</b></h4>
+					<h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>    {{tpo.TpoEmailId}}<br>
+					<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>    {{tpo.TopPhone1}},{{tpo.TopPhone2}}</h4>
+			</div>
+       	</div>
+    </div>
+</div>
+
+
+{% endfor %}
 {% endblock %}
 
+<!--============END TPO SECTION ================-->
 
-{% block body %}
-<div class="container">
-<div class="row">
-	<div class="col-xs-6">
+<!--=========== BEGIN PLACEMENT Section ================-->
 
-		{% block tpodata %}
-		{% for tpo in tpo_data %}
-		<p class="text-justify text-info "> {{ tpo.TpotDesk|safe }}</p>
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h3 class="panel-title"><b>Traing & Placement Officer</b></h3>
-			</div>
-			<div class="panel-body">
-				<div class="media">
-					<div class="pull-left">
-						<a href="#">
-							<img class="img-rounded" src="{{ tpo.TpoImage.thumbnail.url }}" alt="{{ faculty.TpoImage.name }}" height="70" width="70">
-						</a>
-					</div>
-					<div class="media-body">
-						<h5 class="media-heading"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span><b>Prof. {{ tpo.TpoName}}</b></h5>
-						<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  {{tpo.TpoEmailId}}<br>
-							<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{tpo.TopPhone1}},{{tpo.TopPhone2}}</p>
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-			{% endfor %}
-
-			{% endblock %}
+<div class="container-fluid ">
+	<div class="container" style="padding-top:20px" >
+		<div class="col-lg-12 col-md-12"> 
+    		<div class="title_area">
+        		<h2 class="title_two">Placement In {% now "Y" %}</h2>
+    			<span style="width:200px"></span> 
+    		</div>
 		</div>
-		<div class="col-xs-6">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h3 class="panel-title"><b>Placement In <i>[{% now "Y" %}]</i></b></h3>
-				</div>
-				<!-- <div class="panel-body">
-					<div class="table-responsive"> -->
-						<table class="table table-hover table-bordered">
-							<tr>
-								<th class="info"><small>Year</small></th>
-								<th class="info"><small>CompanyName</small></th>
-								<th class="info"><small>Placed Student</small></th>
-								<th class="info"><small>Salary(LPA)</small></th>
-							</tr>
-
-							{% for pdata in place_Data %}
-
-							{% if pdata.PrYear == current_year %}
-
-							<tr>
-								<td >{{pdata.PrYear}}</td>
-								<td >{{pdata.PrCompany}}</td>
-								<td >{{pdata.PlacedStudent}}</td>
-								<td >{{pdata.MaxSalary}}</td>
-							</tr>
-							{% endif %}
-
-							{% endfor %}
-
-						</table>
-					<!-- </div>
-
-				</div> -->
-			</div>
-
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h3 class="panel-title"><b>Associated Company</b></h3>
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-12">
-
-
-							{% block companydata %}
-							{% for company in company_Data %}
-
-							<div class="col-sm-3">
-								<a href="{{company.CompanyUrl}}">
-									<img class="img-rounded" src="{{ company.CompanyLogo.thumbnail.url }}" alt="{{ company.CompanyLogo.name }}" height="70" width="70">
-								</a>
-								<p class=" text-info "> <b><small>{{ company.CompanyName}}</small></b></p>
-							</div>
-
-							{% endfor %}
-							{% endblock %}
-
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-
 	</div>
+	<div class="container">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th class="info"><small>Year</small></th>
+					<th class="info"><small>Company</small></th>
+					<th class="info"><small>No. of Stuents Placed</small></th>
+					<th class="info"><small>Salary (LPA)</small></th>
+				</tr>
+				{% for pdata in place_Data %}
+				{% if pdata.PrYear == current_year %}
 
+				<tr>
+					<td >{{pdata.PrYear}}</td>
+					<td >{{pdata.PrCompany}}</td>
+					<td >{{pdata.PlacedStudent}}</td>
+					<td >{{pdata.MaxSalary}}</td>
+				</tr>
+
+				{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
 </div>
+<!--=========== END PLACEMENT SECTION ================-->
 
-	{% endblock %}
+
+ <!--=========== BEGIN OUR Recruiter SECTION ================-->
+    <section id="ourCourses">
+      <div class="container">
+       <!-- Our courses titile -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12"> 
+            <div class="title_area">
+              <h2 class="title_two">Associated Companies</h2>
+              <span></span> 
+            </div>
+          </div>
+        </div>
+        <!-- End Our courses titile -->
+        
+        {% block companydata %}
+		
+        <!-- Start Our courses content -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="ourCourse_content" >
+              <ul class="course_nav" >
+                {% for company in company_Data %}
+                <li >
+                  <div class="single_course">
+                    <div class="singCourse_imgarea">
+                      <img class="img-responsive" id="tnp" src="{{ company.CompanyLogo.thumbnail.url }}" alt="{{ company.CompanyLogo.name }}" />
+                      <div class="mask">                         
+                        <a href="{{company.CompanyUrl}}" class="course_more">Visit</a>
+                      </div>
+                    </div>
+                    <div class="singCourse_content">
+                    	<h3 class="singCourse_title"><a href="{{company.CompanyUrl}}">{{ company.CompanyName}}</a></h3>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}      
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End Our courses content -->
+      </div>
+    </section>
+    {% endblock %}
+    <!--=========== END OUR COURSES SECTION ================--> 
+{% endblock %}

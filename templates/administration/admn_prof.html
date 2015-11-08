@@ -1,21 +1,18 @@
 {% extends "nav.html" %}
 {% block header %}
-<div class="container">
-	<div class="row">   
-		<div class="col-xs-7">
-
-			{% for prof in admin_prof%}
-
-			<h4 style="display:inline";><b><i>From The  {{prof.AdminType|lower|capfirst }}'s Desk </i></b></h4>
-
-			{% endfor %}
-
-		</div>
-		<div class="col-xs-5">
+<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
+	<div class="container" >
+		<div class="col-lg-12 col-md-12"> 
+    		<div class="title_area" id="area">
+    			{% for prof in admin_prof%}
+        		<h2 class="title_two">{{prof.AdminType}}'s Desk </h2>
+    			<span style="width:200px"></span> 
+    			{% endfor %}
+          	</div>
 		</div>
 	</div>
-</div>
-<hr>
+</div>		
+
 {% endblock %}
 
 {% block body %}
@@ -56,17 +53,6 @@
 		</div>
 
 	</div>
-	<hr>
-	<div class="row">
-
-		<div class="col-xs-6">
-
-		</div>
-
-		<div class="col-xs-6">
-
-		</div>
-
-	</div>
+	
 </div>
 {% endblock %}
