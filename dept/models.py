@@ -14,6 +14,7 @@ class Department(models.Model):
 	DeptTagLine = models.CharField(max_length=200)
 	#DeptImage = models.ImageField(upload_to='dept_img')
 	DeptImage = StdImageField(upload_to='dept_img',  variations={'large': (675, 300, True)})
+	DeptIntake = models.IntegerField(default=60)
 		
 	def __str__(self):
 		 return self.DeptName

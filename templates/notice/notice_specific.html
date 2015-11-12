@@ -30,20 +30,12 @@
 						<th class="active"><small>Notice Type</small></th>
 						<th class="active"><small>Published On</small></th>
 						<th class="active"><small>Valid Till</small></th>
+						<th class="active"><small>Notice Content</small></th>
 						<th class="active"><small>Download</small></th>
 					
 					</tr>
 
-					{% for notice in all_notice%}
-
-					<tr>
-						<td><small><a href="/notice/{{notice.id}}">{{ notice.NoticeTag|capfirst}}</a></small></td>
-						<td><small>{{ notice.NoticeType|lower|capfirst}} </small></td>
-						<td><small>{{ notice.NoticeStartDate}}</small></td>
-						<td><small>{{ notice.NoticeEndDate}}</small></td>
-						<td><a href="{{notice.NoticeFile.url}}" <i class="fa fa-download fa-lg "></i></a></td>
-					</tr>
-					{% endfor %}
+					
 					{% for notice in one_notice%}
 
 					<tr>
@@ -51,6 +43,7 @@
 						<td><small>{{ notice.NoticeType|lower|capfirst}} </small></td>
 						<td><small>{{ notice.NoticeStartDate}}</small></td>
 						<td><small>{{ notice.NoticeEndDate}}</small></td>
+						<td><small>{{ notice.NoticeContent}}</small></td>
 						<td><a href="{{notice.NoticeFile.url}}" <i class="fa fa-download fa-lg "></i></a></td>
 					</tr>
 					{% endfor %}

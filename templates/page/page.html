@@ -1,0 +1,32 @@
+{% extends "nav.html" %}
+
+{% block header %}
+<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
+	<div class="container" >
+		<div class="col-lg-12 col-md-12"> 
+			
+				{% for page_content in page_content%}
+				<h4>{{page_content.Page_Name}}</h4>
+
+				{% endfor %}
+			
+		</div>
+	</div>
+</div>		
+
+{% endblock %}
+
+{% block body %}
+<div class="container" >
+{% for page_content in page_content%}
+{{page_content.Page_Content | safe}}
+
+{% endfor %}
+
+
+{% for page_content in page_files%}
+<img class="img-rounded img-responsive"src="{{ page_content.Page_Image.large.url }}" alt="{{ page_content.Page_Image.name }}" height="300" width="660">
+
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,29 +1,34 @@
 {% extends "nav.html" %}
 {% block header %}
-<<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
+<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
 	<div class="container" >
 		<div class="col-lg-12 col-md-12"> 
     		<div class="title_area" id="area">
-        		<h2 class="title_two">Placement Statistics</h2>
-    			<span style="width:200px"></span> 
-    		</div>
+    		   <h4 class="title_one"><b><i>Placement Statictics</i></b> </h4>
+          
+         <!--  <span style="width:200px"></span>  -->
+
+    		
+
+          	</div>
 		</div>
 	</div>
-</div>
-{% endblock %}
-{% block body %}
-	<div class="container" style="padding-top:10px">
+</div>	
+
+	{% endblock %}
+	{% block body %}
+	<div class="container">
 	<div class="row">
 		
-		<div class="col-xs-12">
+		<div class="col-xs-6">
 
 			<div class="table-responsive">
 				<table class="table table-hover table-bordered ">
 					<tr>
 						<th class="success"><small>Year</small></th>
-						<th class="success"><small>Company</small></th>
-						<th class="success"><small>No. of Students Placed</small></th>
-						<th class="success"><small>Salary (LPA)</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
 					</tr>
 
 					{% for pdata in place_Data %}
@@ -46,9 +51,9 @@
 				<table class="table table-hover table-bordered">
 					<tr>
 						<th class="success"><small>Year</small></th>
-						<th class="success"><small>Company</small></th>
-						<th class="success"><small>No. of Students Placed</small></th>
-						<th class="success"><small>Salary (LPA)</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
 					</tr>
 
 					{% for pdata in place_Data %}
@@ -71,9 +76,10 @@
 				<table class="table table-hover table-bordered">
 					<tr>
 						<th class="success"><small>Year</small></th>
-						<th class="success"><small>Company</small></th>
-						<th class="success"><small>No. of Students Placed</small></th>
-						<th class="success"><small>Salary (LPA)</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
+					</tr>
 
 					{% for pdata in place_Data %}
 					{% if pdata.PrYear == prev_year2  %}
@@ -95,9 +101,9 @@
 				<table class="table table-hover table-bordered">
 					<tr>
 						<th class="success"><small>Year</small></th>
-						<th class="success"><small>Company</small></th>
-						<th class="success"><small>No. of Students Placed</small></th>
-						<th class="success"><small>Salary (LPA)</small></th>
+						<th class="success"><small>CompanyName</small></th>
+						<th class="success"><small>Placed Student</small></th>
+						<th class="success"><small>Salary(LPA)</small></th>
 					</tr>
 
 					{% for pdata in place_Data %}
@@ -116,6 +122,7 @@
 				</table>
 			</div>	
 		</div>
+		<div class="col-xs-6">
 		</div>
 	</div>
 	</div>
