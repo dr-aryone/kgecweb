@@ -36,12 +36,12 @@ class AdminProf(models.Model):
 	def __str__(self):
 		return self.AdminType
 
-
+###DB table structure for institute scroll image #############
 class InstScrollImage(models.Model):
 	ImageDes = models.CharField(max_length=100)
 	#ImageScroll = models.ImageField(upload_to='Institute/ScrollImage/')
 	ImageScroll = StdImageField(upload_to='Institute/ScrollImage/',  variations={'large': (700, 300,True)})
-
+	ImageComment = models.CharField(max_length=100,default='KGEC')
 	def __str__(self):
 		return  self.ImageDes
 
@@ -107,6 +107,9 @@ class Special_Events(models.Model):
 class Admission(models.Model):
 	Admission_Type = models.CharField(max_length=20, primary_key=True)
 	Admission_Details = models.TextField()
+	Admission_Exam = models.CharField(max_length=100,default='WBJEE')
+	Admission_intake = models.CharField(max_length=100,default='60')
+
 
 	def __str__(self):
 		return self.Admission_Type

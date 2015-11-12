@@ -251,7 +251,7 @@ img{
   left: 5%;
   position: absolute;
   top: 25%;
-  width: 50%;
+  width: 60%;
 }
 .slider_right_caption{
   left: 38%;
@@ -263,6 +263,14 @@ img{
   padding: 8px;
   margin-bottom: 5px;
   text-transform: uppercase;
+}
+.slider_caption h3 {
+  color: #fff;
+  font-size: 33px;
+  background-color: rgba(16, 37, 64, 0.6);
+  padding: 8px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
 .slider_caption p {
   background-color: rgba(16, 37, 64, 0.6);
@@ -460,7 +468,7 @@ img{
 }
 #area{
   margin-bottom: 20px;
-  height: 60px;
+  height: 30px;
 }
 .title_area span{
   display: inline-block;  
@@ -941,7 +949,7 @@ div[data-dimension] {
   display: inline-block;
   width: 100%;
   background-color: rgba(16, 37, 64, 0.9);
-  padding: 60px 0px;
+  padding: 20px 0px;
 }
 .single_footer_widget {
   display: inline-block;
@@ -954,12 +962,18 @@ div[data-dimension] {
   text-transform: uppercase;
   margin-bottom: 25px;
 }
+.single_footer_widget > h4 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+}
 .single_footer_widget>p{
   color: #fff;
 }
 .footer_widget_nav li a {
   font-size: 15px;
-  font-weight: bold;
+
   margin-bottom: 3px;
   display: block;
 }

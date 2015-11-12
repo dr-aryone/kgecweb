@@ -13,14 +13,13 @@ class AdminProfAdmin(admin.ModelAdmin):
 admin.site.register(AdminProf, AdminProfAdmin)
 
 
-
 class AdminInstitution(admin.ModelAdmin):
     list_display = ('InstName','InstLogo', 'InstDescrip', 'InstOwner','InstImages')
 admin.site.register(Institution, AdminInstitution)
 
 
 class AdminScrollImage(admin.ModelAdmin):
-    list_display = ('id','ImageDes', 'ImageScroll')
+    list_display = ('id','ImageDes', 'ImageScroll','ImageComment')
 admin.site.register(InstScrollImage, AdminScrollImage)
 
 class AdminSpecialEvents(admin.ModelAdmin):
@@ -29,5 +28,5 @@ admin.site.register(Special_Events,AdminSpecialEvents)
 
 
 class AdminAdmission(admin.ModelAdmin):
-	list_display=('Admission_Type','Admission_Details')
+	list_display=('Admission_Type','Admission_Details','Admission_Exam','Admission_intake')
 admin.site.register(Admission,AdminAdmission)

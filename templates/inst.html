@@ -1,166 +1,145 @@
 {% extends "nav.html" %}
 
 {% block body %}
+<!--  <script>
+  $(function() {
+    $('#slides').superslides({
+      hashchange: true,
+      play: 2000
+    });
 
+    $('#slides').on('mouseenter', function() {
+      $(this).superslides('stop');
+      console.log('Stopped')
+    });
+    $('#slides').on('mouseleave', function() {
+      $(this).superslides('start');
+      console.log('Started')
+    });
+  });
+</script>
+-->
+
+   
 <!--=========== BEGIN SLIDER SECTION ================-->
-    <section id="slider">
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
-          <div class="slider_area">
-            <!-- Start super slider -->
-            <div id="slides">
-              <ul class="slides-container">                          
-                <li>            
-                  {% for inst in inst_data %}
+<section id="slider">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="slider_area">
+        <!-- Start super slider -->
+        <div id="slides">
+          <ul class="slides-container">                          
 
-                  <img src="/static/img/slider/2.jpg" alt="{{ inst.InstImages.name }}">
-                  {% endfor %}
-                  
-                   <div class="slider_caption">
-                    <h2>Kalyani Government Engineering College</h2>
-                    <p>The best college all over the West Bengal under Maulana Abul Kalam Azad University of Technology.</p>
-                    <a class="slider_btn" href="#">Know More</a>
-                  </div>
-                  </li>
-                <!-- Start single slider-->
-                {% block deptimage%}
-                {% for scrollimg in inst_sc_img %}
-                <li>
-                  <img src="{{ scrollimg.ImageScroll.large.url }}" alt="{{ scrollimg.ImageScroll.name }}">
-                   <div class="slider_caption slider_right_caption">
-                    <h2>{{ scrollimg.ImageScroll.name }}</h2>
-                    <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p> -->
-                    <a class="slider_btn" href="#">Know More</a>
-                  </div>
-                </li>
-                {% endfor %}
-                {% endblock %}
-              </ul>
-              <nav class="slides-navigation">
-                <a href="#" class="next"></a>
-                <a href="#" class="prev"></a>
-              </nav>
+           {% for scrollimg in inst_sc_img %}
+           <li> 
+
+            <img src="{{ scrollimg.ImageScroll.url }}" alt="{{ scrollimg.ImageScroll.name }}">
+
+            <div class="slider_caption">
+              <h3>{{ scrollimg.ImageDes }}</h3>
+              <p>{{ scrollimg.ImageComment }}</p>
+              <!-- <a class="slider_btn" href="#">Know More</a> -->
             </div>
-          </div>
-        </div>
+          </li>
+          <!-- Start single slider-->
+          {% endfor %}
+        </ul>
+        <nav class="slides-navigation">
+          <a href="#" class="next"></a>
+          <a href="#" class="prev"></a>
+        </nav>
       </div>
-    </section>
-    <!--=========== END SLIDER SECTION ================-->
+    </div>
+  </div>
+</div>
+</section>
+<!--=========== END SLIDER SECTION ================-->
 
-    <!--=========== BEGIN ABOUT US SECTION ================-->
-    <section id="aboutUs">
-      <div class="container">
-        <div class="row">
-        <!-- Start about us area -->
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="aboutus_area wow fadeInLeft">
-            <h2 class="titile">About Us</h2>
-            <p>Kalyani Government Engineering College is the best college all over the West Bengal under Maulana Abul Kalam Azad University of Technology (formerly - West Bengal University of Technology).</p>
+<!--=========== BEGIN ABOUT US SECTION ================-->
+<!-- <section id="aboutUs"> -->
+  <div class="container">
+    <div class="row">
+      <!-- Start about us area -->
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="aboutus_area wow fadeInLeft">
+          <h4><b>Events</b></h4>
+          <ul class="list-group">
+
+            {% for special_event in special_event %}
+            <li class="list-group-item">
+
+              <div class="media">
+                <div class="pull-left">
+                  <a href="#">
+                    <img class= "img-rounded img-responsive" src="{{ special_event.Event_Image.thumbnail.url }}" alt="{{ special_event.Event_Image.name }}" height="60" width="60">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#">{{special_event.Events_Name|truncatechars:30}}</a></h5>
+                  <p class="text-info "> <small>{{special_event.Events_Descriptions|safe|truncatechars:200}}</small></p>  
+                </div>
+
+              </div>
+            </li>
+
+            {% endfor %}
+
           </div>
         </div>
+
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
+          <h4><b>Notice/Tender</b></h4>
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
               <li class="active"><a href="#notice" data-toggle="tab">Notice</a></li>
-              <li><a href="#events" data-toggle="tab">Events</a></li>         
+
+              <li><a href="#tender" data-toggle="tab">Tender</a></li>
+
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
               <div class="tab-pane fade in active" id="notice">
-                <div class="single_notice_pane">
-                  <ul class="news_tab">
+               <!--  <div class="single_notice_pane"> -->
+                 <!--  <ul class="news_tab"> -->
                     {% for notice in  noti_notice %}
                     <li>
-                        <div class="media-body">
-                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
-                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
-				                </div>                   
+                      <!-- <div class="media-body"> -->
+                      <a href="/notice/{{notice.id}}"><b>{{ notice.NoticeTag }}</b></a>
+                      <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+                      <!--   </div>  -->                  
                     </li>
+
                     {% endfor %}                         
-                  </ul>
-                  <ul class="news_tab">
-                  {% for notice in  reg_notice %}
-                    <li>
-                        <div class="media-body">
-                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
-                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
-                        </div>                   
-                    </li>
-                    {% endfor %}                         
-                  </ul>
-                  <ul class="news_tab">
-                  {% for notice in  pri_notice %}
-                    <li>
-                        <div class="media-body">
-                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
-                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
-                        </div>                   
-                    </li>
-                    {% endfor %}                         
-                  </ul>
-                  <ul class="news_tab">
-                  {% for notice in  aco_notice %}
-                    <li>
-                        <div class="media-body">
-                          <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
-                         <span class="feed_date">{{ notice.NoticeStartDate}}</span>
-                        </div>                   
-                    </li>
-                    {% endfor %}                         
-                  </ul>
-                </div>               
+                <!--   </ul> -->
+
+
+                <!-- </div> -->
+                <a class="see_all" href="/notice/">See All</a>               
               </div>
-              <!-- Start events tab content -->
-              <div class="tab-pane fade " id="events">
-                <ul class="news_tab">
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="img/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">27.02.15</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="img/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>                
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="img/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>                
-                      </div>
-                    </div>
-                  </li>                  
-                </ul>
+
+
+              <div class="tab-pane fade " id="tender">
+                {% for notice in  tndr_notice %}
+                    <li>
+                      <!-- <div class="media-body"> -->
+                      <a href="/notice/{{notice.id}}">{{ notice.NoticeTag }}</a>
+                      <span class="feed_date">{{ notice.NoticeStartDate}}</span>
+                      <!--   </div>  -->                  
+                    </li>
+                    {% endfor %} 
+
                 <a class="see_all" href="#">See All</a>
               </div>
             </div>
           </div>
+
         </div>
       </div>
-      </div>
-    </section>
-    <!--=========== END ABOUT US SECTION ================--> 
-    {% endblock %}
+
+    </div>
+  </div>
+
+<!-- </section> -->
+<!--=========== END ABOUT US SECTION ================--> 
+{% endblock %}

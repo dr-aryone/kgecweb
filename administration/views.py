@@ -20,15 +20,15 @@ def InstituteDetails(request):
     Aca_notice = Notice.objects.filter(NoticeType='ACADEMIC').order_by('NoticeStartDate').reverse()[:10]
 
 
-    Noti_notice = Notice.objects.filter(NoticeType='NOTICE').order_by('NoticeStartDate').reverse()[:5]
-    Reg_notice = Notice.objects.filter(NoticeType='REGISTRAR').order_by('NoticeStartDate').reverse()[:5]
-    Pri_notice = Notice.objects.filter(NoticeType='PRINCIPAL').order_by('NoticeStartDate').reverse()[:5]
-    Aco_notice = Notice.objects.filter(NoticeType='ACCOUNTS').order_by('NoticeStartDate').reverse()[:5]
-    
+    Noti_notice = Notice.objects.filter(NoticeType='NOTICE').order_by('NoticeStartDate').reverse()[:12]
+    Reg_notice = Notice.objects.filter(NoticeType='REGISTRAR').order_by('NoticeStartDate').reverse()[:10]
+    Pri_notice = Notice.objects.filter(NoticeType='PRINCIPAL').order_by('NoticeStartDate').reverse()[:10]
+    Aco_notice = Notice.objects.filter(NoticeType='ACCOUNTS').order_by('NoticeStartDate').reverse()[:10]
+
 
 
     context = {'inst_data': Institute_Data,'inst_sc_img':Institute_scroll_image,'inst_notice':Inst_notice,\
-    'plc_notice':Plc_notice,'tndr_notice':Tndr_notice,'trng_notice':Trng_notice,'exam_notice':Exam_notice,\
+    'plc_notice':Plc_notice,'<tndr_notice></tndr_notice>':Tndr_notice,'trng_notice':Trng_notice,'exam_notice':Exam_notice,\
     'res_notice':Res_notice,'aca_notice':Aca_notice,'noti_notice':Noti_notice,'reg_notice':Reg_notice,\
     'pri_notice':Pri_notice,'aco_notice':Aco_notice,'special_event':Special_Event}
 
@@ -44,7 +44,7 @@ def NoticeDetails(request):
 def NoticeSingle(request , id):
 	One_notice = Notice.objects.filter(id=id)
 	context = {'one_notice':One_notice}
-	return  render(request,'notice/notice.html',context)
+	return  render(request,'notice/notice_specific.html',context)
 
 
 def AdminProfile(request , prof):

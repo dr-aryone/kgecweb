@@ -1,1 +1,0 @@
-/home/ritesh/Desktop/kgecweb/kgecweb/wsgi.py

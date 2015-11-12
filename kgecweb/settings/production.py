@@ -48,7 +48,8 @@ INSTALLED_APPS = (
     'hostels',
     'nkn',
     'clibrary'
-    'imagekit'
+    'imagekit',
+    'page'
 
 
     
