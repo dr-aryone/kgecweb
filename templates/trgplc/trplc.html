@@ -4,7 +4,7 @@
 {% block header %}
 <div class="container-fluid pad" style="background-color:rgb(246,246,246)">
   <div class="container" >
-    <div class="col-lg-12 col-md-12"> 
+    <div class="col-lg-12 col-md-12  col-sm-12"> 
         <div class="title_area" id="area">
         <h4 class="title_one"><b><i>Training and Placement </i></b> </h4>
           
@@ -20,7 +20,7 @@
 {% block body %}
 <div class="container">
 <div class="row">
-  <div class="col-xs-6">
+  <div class="col-lg-6 col-md-6  col-sm-6">
 
     {% block tpodata %}
     {% for tpo in tpo_data %}
@@ -51,7 +51,7 @@
 
       {% endblock %}
     </div>
-    <div class="col-xs-6">
+    <div class="col-lg-6 col-md-6  col-sm-6">
       <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title"><b>Placement In <i>[{% now "Y" %}]</i></b></h3>
@@ -91,13 +91,13 @@
         </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-lg-12 col-md-12  col-sm-12">
 
 
               {% block companydata %}
               {% for company in company_Data %}
 
-              <div class="col-sm-3">
+              <div class="col-lg-3 col-md-3  col-sm-3">
                 <a href="{{company.CompanyUrl}}">
                   <img class="img-rounded" src="{{ company.CompanyLogo.thumbnail.url }}" alt="{{ company.CompanyLogo.name }}" height="70" width="70">
                 </a>

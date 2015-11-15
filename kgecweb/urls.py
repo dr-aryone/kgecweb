@@ -9,6 +9,8 @@ from dept.views import dept ,faculty
 from trplc.views import TraingPlacement ,TraingPlacementRecord
 from contact.views import Contact
 from page.views import new_page
+from hostels.views import AllHostels
+from hostels.views import Hostelone
 
 
 urlpatterns = [
@@ -16,21 +18,35 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'kgecweb.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^notice/$','administration.views.NoticeDetails', name='notice_all'),
-    url(r'^notice/(?P<id>\d+)/$','administration.views.NoticeSingle', name='notice_single'),
-    url(r'^faculty/(?P<id>\d+)/$','dept.views.faculty', name='faculty_details'),
-    url(r'^trgplc/$','trplc.views.TraingPlacement', name='trplc'),
-    url(r'^trgplc/record/$','trplc.views.TraingPlacementRecord', name='trplc_record'),
-	url(r'^department/(?P<dept>\w+)/$','dept.views.dept', name='department'),
     url(r'^administration/(?P<prof>\w+)/$','administration.views.AdminProfile', name='admin_profile'),
     url(r'^admission/(?P<typ>\w+)/$','administration.views.AdmissionDtl',name='admission_dtls'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^notice/$','administration.views.NoticeDetails', name='notice_all'),
+    url(r'^notice/(?P<id>\d+)/$','administration.views.NoticeSingle', name='notice_single'),
+
+###Training And Placement Urls################
+    url(r'^trgplc/$','trplc.views.TraingPlacement', name='trplc'),
+    url(r'^trgplc/record/$','trplc.views.TraingPlacementRecord', name='trplc_record'),
+
+#####Department Urls###################
+	url(r'^department/(?P<dept>\w+)/$','dept.views.dept', name='department'),
+    url(r'^faculty/(?P<id>\d+)/$','dept.views.faculty', name='faculty_details'),
+
+
+##########Hostels Urls#####################
+
+    url(r'^hostels/$','hostels.views.AllHostels', name='all_hostels'),
+    url(r'^hostels/(?P<name>\w+)/$','hostels.views.Hostelone', name='one_hostels'),
+    
     #url(r'^student/', student.view),
     url(r'^student/list/$', ListStudentView.as_view(),name='student_list',),
     url(r'^student/create/$', CreateStudentView.as_view(),name='student_add',),
     url(r'^contact/$', Contact,name='contact'),
 
+### Instant Page ################
     url(r'^page/(?P<page_url>\w+)/$','page.views.new_page', name='new_page'),
 
+
+#####Default Django Admin Urls##########
+    url(r'^admin/', include(admin.site.urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

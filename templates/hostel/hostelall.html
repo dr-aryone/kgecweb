@@ -1,0 +1,40 @@
+{% extends "nav.html" %}
+{% block header %}
+<div class="container-fluid pad" style="background-color:rgb(246,246,246)">
+	<div class="container" >
+		<div class="col-lg-12 col-md-12 col-sm-12"> 
+			<div class="title_area" id="area">
+				<h2 class="title_one">Our Hostels</h2>
+
+			</div>
+		</div>
+	</div>
+</div>	
+
+{% endblock %}
+{% block body %}
+<div class="container" >
+	<div class="col-lg-12 col-md-12 col-sm-12"> 
+
+		{% for hostel in hostel_data %}
+		<div class="col-lg-4 col-md-4 col-sm-4"> 
+			<div class="thumbnail">
+			<a href="/hostels/{{hostel.HostelName}}">
+				<img class="img-rounded img-responsive"src="{{ hostel.HostelImage.large.url }}" alt="{{hostel.HostelImage.name}}" > </a>
+				<div class="caption">
+					<hr>
+					<h5><span class="glyphicon  glyphicon-home" aria-hidden="true"></span><b>{{hostel.HostelName}}</b></h5>
+					<h5><span class="glyphicon  glyphicon-envelope" aria-hidden="true"></span>  {{hostel.HostelEmail}}</h5>
+					<h5><i class="fa fa-mobile"></i>  {{hostel.HostelPhoneNo}}</h5>
+
+
+				</div>
+			</div>
+		</div>
+
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
+
