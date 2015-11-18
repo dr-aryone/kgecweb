@@ -28,12 +28,12 @@
       <div class="slider_area">
         <!-- Start super slider -->
         <div id="slides">
-          <ul class="slides-container">                          
+          <ul class="slides-container" >                          
 
            {% for scrollimg in inst_sc_img %}
            <li> 
 
-            <img src="{{ scrollimg.ImageScroll.url }}" alt="{{ scrollimg.ImageScroll.name }}">
+            <img src="{{ scrollimg.ImageScroll.url }}" alt="{{ scrollimg.ImageScroll.name }}" >
 
             <div class="slider_caption">
               <h3>{{ scrollimg.ImageDes }}</h3>
@@ -57,6 +57,7 @@
 
 <!--=========== BEGIN ABOUT US SECTION ================-->
 <!-- <section id="aboutUs"> -->
+ <!--  <div style="background-color:#fff"> -->
   <div class="container">
     <div class="row">
       <!-- Start about us area -->
@@ -89,7 +90,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="newsfeed_area wow fadeInRight">
-          <h4><b>Notice/Tender</b></h4>
+          <!-- <h4><b>Notice/Tender</b></h4> -->
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
               <li class="active"><a href="#notice" data-toggle="tab">Notice</a></li>
 
@@ -136,10 +137,13 @@
 
         </div>
       </div>
-
     </div>
+    <!-- </div> -->
   </div>
 
 <!-- </section> -->
 <!--=========== END ABOUT US SECTION ================--> 
+
+
 {% endblock %}
+

@@ -9,7 +9,8 @@ from dept.views import dept ,faculty
 from trplc.views import TraingPlacement ,TraingPlacementRecord
 from contact.views import Contact
 from page.views import new_page
-
+from hostels.views import AllHostels
+from hostels.views import Hostelone
 
 
 urlpatterns = [

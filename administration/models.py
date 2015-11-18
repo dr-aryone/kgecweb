@@ -97,7 +97,7 @@ class Notice(models.Model):
 class Special_Events(models.Model):
 	Events_Name = models.CharField(max_length=30)
 	Events_Descriptions = models.TextField()
-	Events_Date = models.DateField(auto_now_add=True)
+	Events_Date = models.DateField(auto_now_add=False)
 	Event_Image = StdImageField(upload_to='notice/special_events/',  variations={'thumbnail': (150, 150,True)})
 
 	def __str__(self):
