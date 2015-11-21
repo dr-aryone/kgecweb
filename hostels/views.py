@@ -12,7 +12,7 @@ def AllHostels(request):
 
 def Hostelone(request , name):
 	HostelsData = Hostel.objects.filter(HostelName=name)
-	HostelEvents = 
+	
 
 	context = {'hostel_data': HostelsData }
 	return render(request, 'hostel/hostelone.html', context)
