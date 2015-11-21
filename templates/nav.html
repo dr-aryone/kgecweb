@@ -76,7 +76,8 @@
       <header id="header">
         <!-- BEGIN MENU -->
         <div class="menu_area">
-          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  <div class="container">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+            <div class="container">
             <div class="navbar-header">
               <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -100,21 +101,23 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About</a>
                     <ul class="dropdown-menu" role="menu">
-                     <li><a href="">Institute Information</a></li>
-                     <li><a href="">Campus</a></li>
-                     <li><a href="">History</a></li>
+                     <li><a href="/page/inst_info/">Institute Information</a></li>
+                     <li><a href="/page/campus/">Campus</a></li>
+                     <!-- <li><a href="">History</a></li> -->
                      <li><a href="https://www.google.co.in/maps/place/Kalyani+Government+Engineering+College/@22.9917637,88.4466087,17z/data=!4m5!1m2!2m1!1skalyani+government+engineering+collegekalyani+west+bengal!3m1!1s0x0000000000000000:0x8f1c6d3ff467d96b?hl=en">Reach Us</a></li>
                      <li><a href="http://alumnikgec.org/www">Alumini</a></li>
-                     <li><a href="/administration/principal/">Principal's Desk</a></li>
+                     <!-- <li class="divider"></li>  -->
+                     <li><a href="/administration/principal">Principal's Office</a></li>
+                    <!-- <li><a href="/administration/registrar">Registrar's Office</a></li> -->
                    </ul>
                  </li>   
 
                  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Academic</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="/department/cse/">Computer Science And Engineering</a></li>
+                    <li><a href="/department/cse/">Computer Science & Engineering</a></li>
                     <li><a href="/department/ee/">Electrical Engineering </a></li>
-                    <li><a href="/department/ece/">Electronics And Communication Engg.</a></li>
+                    <li><a href="/department/ece/">Electronics & Communication Engg.</a></li>
                     <li><a href="/department/it/">Information Technology</a></li>
                     <li><a href="/department/me/">Mechanical Engineering </a></li>
                     <li><a href="/department/mca/">Computer Application </a></li>
@@ -133,8 +136,8 @@
                   <ul class="dropdown-menu" role="menu">
                    <li><a href="/administration/principal">Principal's Office</a></li>
                    <li><a href="/administration/registrar">Registrar's Office</a></li>
-                   <li><a href="/administration/accounts">ACO's Office</a></li>
-                   <li><a href="/notice/">Notice</a></li>
+                   <!-- <li><a href="/administration/accounts">ACO's Office</a></li> -->
+                   
                  </ul>
                </li>
 
@@ -151,28 +154,35 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Training & Placement</a>
                 <ul class="dropdown-menu" role="menu">
                 	<li><a href="/trgplc">TPO's Desk</a></li>
-                  <li><a href="">Activity & Status</a></li>
+                  <!-- <li><a href="">Activity & Status</a></li> -->
                   <li><a href="/trgplc/record">Placement Statistics</a></li>
-                  <li><a href="">Placement Notice</a></li>
-                  <li><a href="">Registration</a></li>
-                  <li><a href="">CV Format</a></li>
-                  <li><a href="">Apply VT</a></li>
+                  <li><a href="/page/plc_notice">Placement Notice</a></li>
+                  <li><a href="/page/plc_reg">Registration</a></li>
+                  <!-- <li><a href="">CV Format</a></li> -->
+                  <!-- <li><a href="">Apply VT</a></li> -->
                 </ul>
               </li>
 
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Facilities</span></a>
                 <ul class="dropdown-menu" role="menu">
                 	<li><a href="http://192.168.8.251:8080/webopac/">Central Library</a></li>
                   <li><a href="/page/nkn/">NKN</a></li>
                 	<li><a href="/hostels/">Hostels</a></li>
                 </ul>
-              </li>
+              </li> -->
+              <li><a href="/notice/">Notice & Tender</a></li>
 
 
               <!-- <li><a href="gallery.html">Gallery</a></li>   -->             
 
-              <!-- <li><a href="/contact">Contact</a></li>  -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/contact">Contact Us</a></li> 
+                  <li><a href="http://goo.gl/forms/1jmC4f8HSF" target="_blank">Website Feedback</a></li>
+                </ul>
+              </li>
             </ul>           
           </div><!--/.nav-collapse -->
         </div>     
@@ -196,23 +206,108 @@
   {% endblock %}
 
   <!--=========== BEGIN FOOTER SECTION ================-->
+  <div class="container-fluid ql">
+  <div class="container" style="padding-top:10px">
+    <div class="panel panel-default panel-grey2 quicklinkscontent" >
+      <div class="panel-heading quicklinks">
+         Quick Links
+      </div>
+      <div class="panel-body">
+         <div class="row">
+            <div class="col-md-4 col-sm-12">
+               <div class="footerheadings">ACADEMIC</div>
+               <div class="footersectioncontent academic">
+           <!--        <a href="/academics/programme.php">Programme</a><br /> -->
+                  <a href="/notice/">Academics Notices</a><br />
+                  <a href="http://www.wbut.ac.in/page.php?id=229" target="_blank">Academics Calendar</a><br />
+                  <a href="http://www.wbut.ac.in/page.php?id=195" target="_blank">Syllabus & Guidelines</a><br />
+                  <a href="https://wbutech.net" target="_blank">Results</a><br />
+                  <!-- <a href="/admissions/scholarships.php"><b>Scholarships</b></a><br />
+                  <a href="/admission">Admissions</a><br /> -->
+                  <a href="/admission/btech">Admissions - B.Tech</a><br />
+                  <a href="/admission/mtech">Admissions - M.Tech</a><br />
+                  <a href="/admission/mca">Admissions - MCA</a><br />
+                  <!-- <a href="/csab.php">CSAB 2014-JEE Main</a><br />
+                  <a href="/ccmt/ccmt.php">CCMT-2015 Help Centre</a><br />
+                  <a href="/sesi_student_chapter/index.php" target="_blank">SESI Student Chapter</a><br/> -->
+                  <a href="http://kgecitra.wix.com/kgecmca" target="_blank">KGEC-IRTA R&D</a><br/>
+                  
+                  
+                  <a href="http://sites.ieee.org/sb-kgec/" target="_blank">IEEE-EDS Student Branch Chapter</a><br/>
+                  
+                  <!-- <a href="/misc_docs/Institute_Publication_NITScoop.pdf" target="_blank">Institute Publication</a><br/>
+                  <a href="/workshops/seminars.php"><b>Workshops / Seminars</b></a><br /> -->
+               </div>
+            </div>
+            <div class="col-md-4 col-sm-12 ">
+               <div class="footerheadings">EXPLORE KGEC</div>
+               <div class="footersectioncontent">
+                  <a href="/page/inst_info/">Institute Information</a><br />
+                  <a href="/page/campus/">Campus Facilities</a><br />
+                  
+                  <!-- <a href="/campuslife/festivals.php">Festivals</a><br />
+                  <a href="/campuslife/societies.php">Societies</a><br />
+                  <a href="/campuslife/healthcentre.php">Health Centre</a><br /> -->
+                  <a href="/hostels/">Hostels</a><br />
+                  <a href="htts://su.kgec.ac.in/" target="_blank">Students' Union</a><br />
+                  <a href="htts://espektro.in/" target="_blank">ESPEKTRO - The Annual Cultural & Techno - Management Fest</a><br />
+                  <a href="https://www.facebook.com/kgecphotographyclub/" target="_blank">Photography Club</a><br />
+                  
+                  <a href="/contact/">Contact Us</a><br />
+               </div>
+            </div>
+            <div class="col-md-4 col-sm-12 ">
+               <div class="footerheadings">OTHER LINKS</div>
+               <div class="otherlinkscontent">
+                  <a href="https://mail.kgec.ac.in" target="_blank"><b>Webmail</b></a><br />
+                  <a href="https://aicte-india.org" target="_blank">AIEEE</a><br />
+                  <a href="https://wbutech.net" target="_blank">MAKAUT</a><br />
+                  <a href="https://alumnikgec.org/www" target="_blank">Alumni</a><br />
+                  <!-- <a href="/rti/rti.php">RTI/Annual Reports</a><br />
+                  <a href="/pension_matters/pension.php">Pension Matters</a><br />
+                  <a href="/property_returns/property.php">Property Returns</a><br />
+                  <a href="/acts/anti_ragging.pdf">Anti-Ragging Policies</a><br />
+                   -->
+                   <a href="https://192.168.8.251:8080/webopac/" target="_blank">Library</a><br />
+                  <a href="http://kgececell.org" target="_blank">Entrepreneurship Cell</a><br/>
+                   <a href="/trgplc">Training and Placement (T&P) Cell</a><br />
+                   <a href="/page/plc_reg">Training and Placements Registration</a><br />
+                  <a href="http://goo.gl/forms/1jmC4f8HSF" target="_blank"><b>Website Feedback</b></a><br /> 
+                  
+                  <!-- <a href="/academics/ccc.php">Central Computer Centre</a><br />
+                  <a href="/committees/committees.php" target="_blank">Committees</a><br/>
+                  <a href="/acts/acts_statutes.php" target="_blank">NIT Acts & Statutes</a><br/> -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+</div>
   <footer id="footer">
     <!-- Start footer top area -->
     <div class="footer_top">
       <div class="container">
         <div class="row">
-          <div class="col-ld-4  col-md-4 col-sm-4">
+          <div class="col-ld-2  col-md-2 col-sm-2 col-xs-12">
             <div class="single_footer_widget">
-              <h4 style="text-align:Left"><b>Address</b></h4>
-              <p class="text-justify">Kalyani Government Engineering College</br>
-                Kalyani, Nadia, West Bengal,India 741235</br>
+              <img src="/static/img/logo3.png" class="img-responsive footer_logo" alt="logo" >
+            </div>
+          </div>
+          <div class="col-ld-5  col-md-5 col-sm-5">
+            <div class="single_footer_widget">
+              <!-- <img src="/static/img/logo.png" class="img-responsive" alt="logo" style="max-width:200px "> -->
+              <h4 style="text-align:Left "><b>Kalyani Government Engineering College</b></h4>
+              <p class="text-justify">Kalyani, Nadia, West Bengal, India 741235</br>
 
                 Phone : +91 3325821309</br>
 
                 Email : contact@kgec.edu.in</p>
               </div>
             </div>
-            <div class="col-ld-2  col-md-2 col-sm-2">
+            <!-- <div class="col-ld-2  col-md-2 col-sm-2">
               <div class="single_footer_widget">
                 <h4 style="text-align:center"><b>QuickLink</b></h4>
           
@@ -253,11 +348,13 @@
                 </ul>
                 </div>
         
+            </div> -->
+            <div class="col-ld-3  col-md-3 col-sm-3">
             </div>
             <div class="col-ld-2  col-md-2 col-sm-2">
               <div class="single_footer_widget ">
               <h4 style="text-align:center"><b>Social Links</b></h4>
-                <ul class="footer_social" style="padding-left:115px" >
+                <ul class="footer_social">
                   <li ><a data-toggle="tooltip" data-placement="bottom" title="Facebook" class="soc_tooltip" href="https://www.facebook.com/kgec.officialpage"><i class="fa fa-facebook"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="bottom" title="Google+" class="soc_tooltip"  href="https://www.facebook.com/l.php?u=https%3A%2F%2Fplus.google.com%2Fb%2F100192113746220314289%2F100192113746220314289%2Fabout%2Fp%2Fpub%3FpageId%3D100192113746220314289%26hl%3Den%26_ga%3D1.72690832.266045026.1444558805&h=yAQEjt9v0"><i class="fa fa-google-plus"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="bottom" title="Linkedin" class="soc_tooltip"  href="https://www.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fgrp%2Fhome%3Fgid%3D7015410&h=yAQEjt9v0"><i class="fa fa-linkedin"></i></a></li>
@@ -271,22 +368,19 @@
       <!-- End footer top area -->
 
       <!-- Start footer bottom area -->
-      <!-- <div class="footer_bottom">
+      <div class="footer_bottom">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="footer_bootomLeft">
-                <p> Copyright &copy; <a href="/" rel="nofollow">Kalyani Government Engineering College</a> | All Rights Reserved</p>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="footer_bootomRight">
-                <p>Developed by <a href="/contact" rel="nofollow">KGEC</a></p>
+                <b><p> &copy; Copyright 2015 | <!-- <a href="/" rel="nofollow"> -->Kalyani Government Engineering College<!-- </a> -->
+                <br />
+                All Rights Reserved</p></b>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- End footer bottom area -->
     </footer>
     <!--=========== END FOOTER SECTION ================--> 
