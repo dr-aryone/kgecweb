@@ -171,7 +171,8 @@ img{
 .navbar-default .navbar-nav > li > a {
   color: #fff;
   padding: 35px 10px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+  font-weight: bold;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
@@ -201,6 +202,7 @@ img{
   color: #fff;
   display: block;  
   opacity: 0.6;
+  font-weight: bold;
   padding: 5px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -1859,8 +1861,8 @@ line-height:20px;
   
 @media(max-width:991px ){
   .navbar-default .navbar-brand {font-size: 20px;}
-  .navbar-default .nav-text {font-size: 12px; margin-top: 2px; }
-  .navbar-default .navbar-nav > li > a {font-size: 9px;padding: 30px 6px;font-weight: bold;}
+  .navbar-default .nav-text {font-size: 10px; margin-top: 2px; }
+  .navbar-default .navbar-nav > li > a {font-size: 10px;padding: 30px 6px;font-weight: bold;}
   .navbar-nav > li > .dropdown-menu li a {font-size: 12px;}
   .navbar-brand{width: 160px;}
   .navbar-brand img{max-width: 100%;}
