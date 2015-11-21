@@ -28,7 +28,7 @@ def InstituteDetails(request):
 
 
     context = {'inst_data': Institute_Data,'inst_sc_img':Institute_scroll_image,'inst_notice':Inst_notice,\
-    'plc_notice':Plc_notice,'<tndr_notice></tndr_notice>':Tndr_notice,'trng_notice':Trng_notice,'exam_notice':Exam_notice,\
+    'plc_notice':Plc_notice,'tndr_notice':Tndr_notice,'trng_notice':Trng_notice,'exam_notice':Exam_notice,\
     'res_notice':Res_notice,'aca_notice':Aca_notice,'noti_notice':Noti_notice,'reg_notice':Reg_notice,\
     'pri_notice':Pri_notice,'aco_notice':Aco_notice,'special_event':Special_Event}
 
