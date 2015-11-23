@@ -47,6 +47,12 @@ def NoticeSingle(request , id):
 	return  render(request,'notice/notice_specific.html',context)
 
 
+def NoticeTypeWise(request , ty):
+    Notice_Type_Wise = Notice.objects.filter(NoticeType=ty)
+    context = {'all_notice':Notice_Type_Wise}
+    return  render(request,'notice/notice.html',context)
+
+
 def AdminProfile(request , prof):
 	All_profile = AdminProf.objects.filter(AdminType=prof)
 	context = {'admin_prof':All_profile}

@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf.urls.static import static
-from administration.views import InstituteDetails ,NoticeDetails, NoticeSingle, AdminProfile , AdmissionDtl
+from administration.views import InstituteDetails ,NoticeDetails, NoticeSingle, AdminProfile , AdmissionDtl, NoticeTypeWise
 from student.views  import ListStudentView ,CreateStudentView
 from dept.views import dept ,faculty
 from trplc.views import TraingPlacement ,TraingPlacementRecord
@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admission/(?P<typ>\w+)/$','administration.views.AdmissionDtl',name='admission_dtls'),
     url(r'^notice/$','administration.views.NoticeDetails', name='notice_all'),
     url(r'^notice/(?P<id>\d+)/$','administration.views.NoticeSingle', name='notice_single'),
+    url(r'^notice/(?P<ty>\w+)/$','administration.views.NoticeTypeWise', name='notice_type'),
 
 ###Training And Placement Urls################
     url(r'^trgplc/$','trplc.views.TraingPlacement', name='trplc'),
