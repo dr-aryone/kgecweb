@@ -94,9 +94,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'kgecweb',
-        'USER': 'root',
-        'PASSWORD': 'Alchemist@)12',
+        'NAME': 'id164109_kgecweb',
+        'USER': 'id164109_root',
+        'PASSWORD': '713331',
         'HOST': 'localhost',
         'PORT': '3306',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
