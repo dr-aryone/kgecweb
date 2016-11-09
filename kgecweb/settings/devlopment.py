@@ -94,9 +94,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'kgecweb',
+        'NAME': 'kgecwebtest',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '713331',
         'HOST': 'localhost',
         'PORT': '3306',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -123,6 +123,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "../static"),)
 
 
 #STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
