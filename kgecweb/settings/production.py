@@ -47,9 +47,8 @@ INSTALLED_APPS = (
     'student',
     'hostels',
     'nkn',
-    'clibrary'
-    'imagekit',
-    'page'
+    'clibrary',
+    'page',
 
 
     
